@@ -8,10 +8,12 @@ public class SoundSettings : MonoBehaviour
     public Slider volumeSlider;
     public AudioSource audioSource;
 
+    private AudioListener audioListener;
     private float defaultVolume;
 
     private void Start()
     {
+        audioListener = FindObjectOfType<AudioListener>();
         defaultVolume = audioSource.volume;
         volumeSlider.value = defaultVolume;
     }
@@ -19,6 +21,11 @@ public class SoundSettings : MonoBehaviour
     public void SetVolume()
     {
         audioSource.volume = volumeSlider.value;
+    }
+
+    public void ToggleMute()
+    {
+        audioListener.enabled = !audioListener.enabled;
     }
 
     public void ResetVolume()
