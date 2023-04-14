@@ -1,4 +1,3 @@
-using System.Net.NetworkInformation;
 // -----------------------------------------------------------------------------------------
 // using classes
 using System.Collections;
@@ -64,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        PlayerOrientation();
     }
 
     // -----------------------------------------------------------------------------------------
@@ -106,6 +106,32 @@ public class PlayerMovement : MonoBehaviour
                 }
                 return;
             }
+        }
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // player orientation method
+    void PlayerOrientation()
+    {
+        if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Top"))))
+        {
+            animator.SetInteger("orientation", 0);
+            return;
+        }
+        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Bottom"))))
+        {
+            animator.SetInteger("orientation", 4);
+            return;
+        }
+        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Left"))))
+        {
+            animator.SetInteger("orientation", 2);
+            return;
+        }
+        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Right"))))
+        {
+            animator.SetInteger("orientation", 6);
+            return;
         }
     }
 }
