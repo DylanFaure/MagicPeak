@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 103069438}
   - component: {fileID: 103069437}
   - component: {fileID: 103069436}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -885,7 +885,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 22
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1172,14 +1172,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -3202715059107602505, guid: bfd966c4491dd7344818ba069bcbf196, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -3890848663903233906, guid: bfd966c4491dd7344818ba069bcbf196, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -3202715059107602505, guid: bfd966c4491dd7344818ba069bcbf196, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: -6970618254865476229, guid: bfd966c4491dd7344818ba069bcbf196, type: 2}
   - m_RefCount: 1
@@ -4075,7 +4075,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 8
-      m_TileSpriteIndex: 34
+      m_TileSpriteIndex: 37
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4660,14 +4660,14 @@ Tilemap:
     m_Data: {fileID: -7757057097096272125, guid: abe6a8a7950fad342b0226f05d8ec51b, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 6790849038090695963, guid: 5d67259bc04cae040ae1b884d08bed4b, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 10
     m_Data: {fileID: 712146400012484841, guid: abe6a8a7950fad342b0226f05d8ec51b, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 6790849038090695963, guid: 5d67259bc04cae040ae1b884d08bed4b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: -5638696796920432945, guid: abe6a8a7950fad342b0226f05d8ec51b, type: 2}
   - m_RefCount: 2
@@ -4897,7 +4897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908004720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 91.15, y: 17.82, z: 0}
+  m_LocalPosition: {x: 91.5, y: 17.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4921,6 +4921,10 @@ MonoBehaviour:
   moveSpeed: 7
   rb: {fileID: 908004724}
   playerMovePoint: {fileID: 977972924}
+  whatStopsMovement:
+    serializedVersion: 2
+    m_Bits: 64
+  animator: {fileID: 908004723}
 --- !u!1 &977972923
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,7 +4937,7 @@ GameObject:
   m_Layer: 0
   m_Name: PlayerMovePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

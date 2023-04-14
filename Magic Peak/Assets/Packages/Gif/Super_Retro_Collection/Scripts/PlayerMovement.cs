@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform playerMovePoint;
     public LayerMask whatStopsMovement;
+    public Animator animator;
 
     // -----------------------------------------------------------------------------------------
     // private members
@@ -61,6 +62,13 @@ public class PlayerMovement : MonoBehaviour
     // -----------------------------------------------------------------------------------------
     // Update is called once per frame
     void Update()
+    {
+        MovePlayer();
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // move player method
+    void MovePlayer()
     {
         transform.position = Vector3.MoveTowards(transform.position, playerMovePoint.position, moveSpeed * Time.deltaTime);
 
