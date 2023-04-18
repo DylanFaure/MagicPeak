@@ -15,10 +15,11 @@ public class GachaManager : MonoBehaviour {
     [SerializeField] private GameObject electricEffectsPrefab;
 
     [Header("Rate and price")]
-    [SerializeField] private int balance = 100;
     [SerializeField] private int price = 10;
 
     [Header("Texts")]
+    [SerializeField] private TextMeshProUGUI currentBalanceText;
+    [SerializeField] private TextMeshProUGUI buttonText;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private TextMeshProUGUI errorText;
 
@@ -38,17 +39,27 @@ public class GachaManager : MonoBehaviour {
     [SerializeField] private float displayErrorMessageTime = 5.0f;
     
     private bool pullCoroutineState = false;
+    private int balance = 0;
 
     void Start()
     {
+        balance = WalletManager.instance.GetWalletData();
+        DisplayCurrentBalance();
+        DisplayTextButton();
         SetDefaultAll();
+    }
+
+    void Update()
+    {
+        balance = WalletManager.instance.GetWalletData();
+        DisplayCurrentBalance();
+        DisplayTextButton();
     }
 
     public void Pull()
     {
         if (!pullCoroutineState)
         {
-            
             SetDefaultAll();
 
             if (balance < price)
@@ -56,7 +67,7 @@ public class GachaManager : MonoBehaviour {
                 StartCoroutine(ShowAndHide());
                 return;
             }
-            balance -= price;
+            WalletManager.instance.DeductCurrency(price);
 
             Item itemWon = null;
             int rarityRoll = Random.Range(1, 101);
@@ -77,6 +88,7 @@ public class GachaManager : MonoBehaviour {
             // Add the item to the user's inventory
 
             DisableButton();
+            DisappearBalanceText();
 
             StartCoroutine(PullAnimation(itemWon));
             pullCoroutineState = true;
@@ -92,6 +104,26 @@ public class GachaManager : MonoBehaviour {
         iceEffectsPrefab.SetActive(false);
         fireEffectsPrefab.SetActive(false);
         electricEffectsPrefab.SetActive(false);
+    }
+
+    private void DisplayCurrentBalance()
+    {
+        currentBalanceText.text = balance.ToString() + "$";
+    }
+
+    private void DisappearBalanceText()
+    {
+        currentBalanceText.gameObject.SetActive(false);
+    }
+
+    private void AppearBalanceText()
+    {
+        currentBalanceText.gameObject.SetActive(true);
+    }
+
+    private void DisplayTextButton()
+    {
+        buttonText.text = price.ToString() + "$ PULL";
     }
 
     private void DisableButton()
@@ -175,6 +207,7 @@ public class GachaManager : MonoBehaviour {
         CardEffects();
         yield return new WaitForSeconds(nextPullDelay);
         EnableButton();
+        AppearBalanceText();
         pullCoroutineState = false;
     }
 
