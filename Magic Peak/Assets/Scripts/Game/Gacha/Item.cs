@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+#if UNITY_EDITOR
 [CreateAssetMenu(fileName = "New card", menuName = "Character")]
+#endif
 public class Item : ScriptableObject
 {
     public string nameCard;
     public Sprite sprite;
-
-    [Range(1, 100)]
-    public int dropRate;
 
     public enum EnumElements { None, Poison, Ice, Fire, Electric };
     public EnumElements firstElement;
     public EnumElements secondeElement;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Item))]
 public class CustomDropdown : Editor {
     SerializedProperty enumPropsElements;
@@ -33,3 +36,4 @@ public class CustomDropdown : Editor {
         serializedObject.ApplyModifiedProperties();
     }
 }
+#endif

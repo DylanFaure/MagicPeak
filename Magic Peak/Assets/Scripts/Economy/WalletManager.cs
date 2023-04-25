@@ -5,30 +5,46 @@ using UnityEngine;
 public class WalletManager : MonoBehaviour
 {
     public static WalletManager instance;
-    public WalletData walletData;
+    private WalletData walletData;
 
-    void Awake() {
-        if (instance == null) {
+    void Start()
+    {
+        LoadWalletData();
+    }
+
+    void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
-        } else {
+            Debug.Log("Wallet instanced !");
+        }
+        else
+        {
             Destroy(gameObject);
+            Debug.Log("Wallet destroyed !");
             return;
         }
 
         DontDestroyOnLoad(gameObject);
     }
 
-    public void AddCurrency(int amount) {
+    public void AddCurrency(int amount)
+    {
         walletData.currencyAmount += amount;
         SaveWalletData();
     }
 
-    public bool DeductCurrency(int amount) {
-        if (walletData.currencyAmount >= amount) {
+    public bool DeductCurrency(int amount)
+    {
+        if (walletData.currencyAmount >= amount)
+        {
             walletData.currencyAmount -= amount;
             SaveWalletData();
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
@@ -38,12 +54,14 @@ public class WalletManager : MonoBehaviour
         return walletData.currencyAmount;
     }
 
-    private void SaveWalletData() {
+    private void SaveWalletData()
+    {
         string json = JsonUtility.ToJson(walletData);
         PlayerPrefs.SetString("walletData", json);
     }
 
-    private void LoadWalletData() {
+    private void LoadWalletData()
+    {
         string json = PlayerPrefs.GetString("walletData");
         if (!string.IsNullOrEmpty(json)) {
             walletData = JsonUtility.FromJson<WalletData>(json);
