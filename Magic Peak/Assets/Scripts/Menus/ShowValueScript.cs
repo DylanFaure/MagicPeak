@@ -6,15 +6,11 @@ using TMPro;
 
 public class ShowValueScript : MonoBehaviour
 {
-    private TMP_Text m_Text;
-
-    void Start()
-    {
-        m_Text = GetComponent<TMP_Text>();
-    }
+    [SerializeField] private TMP_Text m_Text;
 
     public void ShowValue(float value)
     {
-        m_Text.text = Mathf.RoundToInt(value * 100) + "%";
+        float volume = value * 100f;
+        m_Text.text = volume.ToString("F0") + "%";
     }
 }

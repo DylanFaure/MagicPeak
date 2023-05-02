@@ -13,8 +13,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private Slider menuVolumeSlider;
 
-
-    [SerializeField] private float defaultVolume = 1f;
     private float beforeMute = 1f;
 
     private float masterVolume = 1f;
@@ -30,8 +28,12 @@ public class AudioManager : MonoBehaviour
             musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
             menuVolume = PlayerPrefs.GetFloat("MenuVolume");
+            Debug.Log("MasterVolume: " + masterVolume);
+            Debug.Log("MusicVolume: " + musicVolume);
+            Debug.Log("SFXVolume: " + sfxVolume);
+            Debug.Log("MenuVolume: " + menuVolume);
             ApplyToSliders();
-            SetVolume();
+            SetVolume("All");
 
         } else {
             masterVolume = 1f;
@@ -89,12 +91,29 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.SetFloat("MenuVolume", menuVolume);
     }
 
-    public void SetVolume()
+    public void SetVolume(string which)
     {
-        masterVolume = masterVolumeSlider.value;
-        musicVolume = musicVolumeSlider.value;
-        sfxVolume = sfxVolumeSlider.value;
-        menuVolume = menuVolumeSlider.value;
+        switch (which)
+        {
+            case "Master":
+                masterVolume = masterVolumeSlider.value;
+                break;
+            case "Music":
+                musicVolume = musicVolumeSlider.value;
+                break;
+            case "SFX":
+                sfxVolume = sfxVolumeSlider.value;
+                break;
+            case "Menu":
+                menuVolume = menuVolumeSlider.value;
+                break;
+            case "All":
+                masterVolume = masterVolumeSlider.value;
+                musicVolume = musicVolumeSlider.value;
+                sfxVolume = sfxVolumeSlider.value;
+                menuVolume = menuVolumeSlider.value;
+                break;
+        }
         ApplyToMixer();
     }
 
