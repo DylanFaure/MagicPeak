@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // -----------------------------------------------------------------------------------------
     // private members
     private Vector2 movement;
+    private bool isCastingSpell = false;
 
     // -----------------------------------------------------------------------------------------
     // awake method to initialisation
@@ -62,14 +63,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-        PlayerOrientation();
-
-        if (Input.GetKey(KeyCode.E))
+        if (!isCastingSpell)
         {
-            animator.SetBool("spellCast1", true);
-            return;
+            MovePlayer();
+            PlayerOrientation();
         }
+        PlayerIsMovingAnimation();
+        PlayerSpellCast();
     }
 
     // -----------------------------------------------------------------------------------------
@@ -139,5 +139,58 @@ public class PlayerMovement : MonoBehaviour
             animator.SetInteger("orientation", 6);
             return;
         }
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // player is moving animation method
+    void PlayerIsMovingAnimation()
+    {
+        // Gestion isMoving Animation
+        if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Right")))
+        || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Left")))
+        || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Top")))
+        || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Bottom"))))
+        {
+            animator.SetBool("isMoving", true);
+        }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // player spellcast method
+    void PlayerSpellCast()
+    {
+        if (!isCastingSpell)
+        {
+            // TEMPORAIRE -- TESTS
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                animator.SetBool("spellCast1", true);
+                isCastingSpell = true;
+                StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
+            }
+            else if (Input.GetKeyDown(KeyCode.R))
+            {
+                animator.SetBool("spellCast2", true);
+                isCastingSpell = true;
+                StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
+            }
+            else if (Input.GetKeyDown(KeyCode.T))
+            {
+                animator.SetBool("death", true);
+                isCastingSpell = true;
+                StartCoroutine(SetAnimationWithTime("death", 4f));
+            }
+        }
+    }
+
+    IEnumerator SetAnimationWithTime(string spellName, float spellTime)
+    {
+        yield return new WaitForSeconds(spellTime);
+        animator.SetBool(spellName, false);
+        isCastingSpell = false;
     }
 }

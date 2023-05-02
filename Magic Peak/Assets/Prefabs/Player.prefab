@@ -153,7 +153,7 @@ Animator:
   m_GameObject: {fileID: 3004260406094405092}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 221c70e95b8c1584a94f75f1b1dedaa4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 80345a3d38a8cd740a1e29be1fee3498, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -177,7 +177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0057373047, y: 0.0016832352}
+  m_Offset: {x: 0.016824901, y: -0.016796052}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90740967, y: 0.91256523}
+  m_Size: {x: 0.4786905, y: 0.47645438}
   m_EdgeRadius: 0
 --- !u!114 &27511440016454927
 MonoBehaviour:
@@ -202,9 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3234fdfafb3cf244c91e72bc07e9f5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 5
   rb: {fileID: 3004260406094405088}
-  playerMovePoint: {fileID: 3004260406094405091}
+  playerMovePoint: {fileID: 3004260405898034728}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
@@ -225,7 +225,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   animator: {fileID: 3004260406094405095}
   spriteRenderer: {fileID: 3004260406094405090}
-  SpriteSheetName: Obeiron
+  SpriteSheetName: Misa
 --- !u!1 &3004260406989730776
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 16
+  m_AssetsPPU: 32
   m_RefResolutionX: 320
   m_RefResolutionY: 240
   m_UpscaleRT: 0

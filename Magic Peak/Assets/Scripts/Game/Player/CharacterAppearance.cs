@@ -40,15 +40,15 @@ public class CharacterAppearance : MonoBehaviour
         previousPosition = tf.position;
         //velocity = rb.velocity;
         this.LoadSpriteSheet();
-        animator.SetFloat("speed", 0);
         animator.SetInteger("orientation", 4);
     }
+
     // -----------------------------------------------------------------------------------------
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("animator speed = " + animator.GetFloat("speed"));
     }
+
     // -----------------------------------------------------------------------------------------
     // fixed update methode
     void FixedUpdate()
@@ -80,7 +80,6 @@ public class CharacterAppearance : MonoBehaviour
     // Set the animation parameters
     public void animationUpdate()
     {
-        animator.SetFloat("speed", Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
     }
     // -----------------------------------------------------------------------------------------
     // Loads the sprites from a sprite sheet
