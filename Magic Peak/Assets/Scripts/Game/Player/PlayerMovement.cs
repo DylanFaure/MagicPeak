@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Transform playerMovePoint;
     public LayerMask whatStopsMovement;
+    public LayerMask ice;
     public Animator animator;
 
     // -----------------------------------------------------------------------------------------
@@ -65,11 +66,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isCastingSpell)
         {
-            MovePlayer();
             PlayerOrientation();
+            // if (Physics2D.OverlapCircle(this.transform.position, .2f, ice))
+            // {
+            //     MovePlayerOnIce();
+            // }
+            // else
+            // {
+            MovePlayer();
+            // }
+            PlayerIsMovingAnimation();
         }
-        PlayerIsMovingAnimation();
-        PlayerSpellCast();
     }
 
     // -----------------------------------------------------------------------------------------
@@ -85,6 +92,17 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, 0.5f, 0f), .2f, whatStopsMovement))
                 {
                     playerMovePoint.position += new Vector3(0f, 0.5f, 0f);
+                    if (Physics2D.OverlapCircle(playerMovePoint.position, .2f, ice))
+                    {
+                        animator.SetInteger("orientation", 0);
+                        while (Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, 0.5f, 0f), .2f, ice)
+                        && !Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, 0.5f, 0f), .2f, whatStopsMovement))
+                        {
+                            playerMovePoint.position += new Vector3(0f, 0.5f, 0f);
+                        }
+                        if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, 0.5f, 0f), .2f, whatStopsMovement))
+                            playerMovePoint.position += new Vector3(0f, 0.5f, 0f);
+                    }
                 }
                 return;
             }
@@ -93,6 +111,17 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, -0.5f, 0f), .2f, whatStopsMovement))
                 {
                     playerMovePoint.position += new Vector3(0f, -0.5f, 0f);
+                    if (Physics2D.OverlapCircle(playerMovePoint.position, .2f, ice))
+                    {
+                        animator.SetInteger("orientation", 4);
+                        while (Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, -0.5f, 0f), .2f, ice)
+                        && !Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, -0.5f, 0f), .2f, whatStopsMovement))
+                        {
+                            playerMovePoint.position += new Vector3(0f, -0.5f, 0f);
+                        }
+                        if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, -0.5f, 0f), .2f, whatStopsMovement))
+                            playerMovePoint.position += new Vector3(0f, -0.5f, 0f);
+                    }
                 }
                 return;
             }
@@ -101,6 +130,17 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(-0.5f, 0f, 0f), .2f, whatStopsMovement))
                 {
                     playerMovePoint.position += new Vector3(-0.5f, 0f, 0f);
+                    if (Physics2D.OverlapCircle(playerMovePoint.position, .2f, ice))
+                    {
+                        animator.SetInteger("orientation", 2);
+                        while (Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(-0.5f, 0f, 0f), .2f, ice)
+                        && !Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(-0.5f, 0f, 0f), .2f, whatStopsMovement))
+                        {
+                            playerMovePoint.position += new Vector3(-0.5f, 0f, 0f);
+                        }
+                        if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(-0.5f, 0f, 0f), .2f, whatStopsMovement))
+                            playerMovePoint.position += new Vector3(-0.5f, 0f, 0f);
+                    }
                 }
                 return;
             }
@@ -109,6 +149,17 @@ public class PlayerMovement : MonoBehaviour
                 if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0.5f, 0f, 0f), .2f, whatStopsMovement))
                 {
                     playerMovePoint.position += new Vector3(0.5f, 0f, 0f);
+                    if (Physics2D.OverlapCircle(playerMovePoint.position, .2f, ice))
+                    {
+                        animator.SetInteger("orientation", 6);
+                        while (Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0.5f, 0f, 0f), .2f, ice)
+                        && !Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0.5f, 0f, 0f), .2f, whatStopsMovement))
+                        {
+                            playerMovePoint.position += new Vector3(0.5f, 0f, 0f);
+                        }
+                        if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0.5f, 0f, 0f), .2f, whatStopsMovement))
+                            playerMovePoint.position += new Vector3(0.5f, 0f, 0f);
+                    }
                 }
                 return;
             }
@@ -119,6 +170,12 @@ public class PlayerMovement : MonoBehaviour
     // player orientation method
     void PlayerOrientation()
     {
+        if (Vector3.Distance(transform.position, playerMovePoint.position) > .05f
+        && Physics2D.OverlapCircle(this.transform.position, .2f, ice))
+        {
+            return;
+        }
+
         if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Top"))))
         {
             animator.SetInteger("orientation", 0);
@@ -145,6 +202,12 @@ public class PlayerMovement : MonoBehaviour
     // player is moving animation method
     void PlayerIsMovingAnimation()
     {
+        if (Physics2D.OverlapCircle(this.transform.position, .2f, ice))
+        {
+            animator.SetBool("isMoving", false);
+            return;
+        }
+
         // Gestion isMoving Animation
         if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Right")))
         || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Left")))
