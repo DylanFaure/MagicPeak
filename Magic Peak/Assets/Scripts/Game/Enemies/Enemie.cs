@@ -12,6 +12,11 @@ public class Enemie : MonoBehaviour
     
     private bool canSeePlayer = false;
     
+    void Start()
+    {
+        InvokeRepeating("ChangeDirection", 0f, 1f);
+    }
+
     void Update()
     {
         if (CanSeePlayer())
@@ -33,6 +38,7 @@ public class Enemie : MonoBehaviour
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
             canSeePlayer = true;
+            Debug.Log("I see the player !");
         }
         else
         {
@@ -56,5 +62,10 @@ public class Enemie : MonoBehaviour
     void MoveTowardsPlayer()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+    }
+
+    void ChangeDirection()
+    {
+        Vector2 direction = Random.insideUnitCircle.normalized;
     }
 }
