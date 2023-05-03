@@ -16,6 +16,9 @@ public class GachaManager : MonoBehaviour {
     [SerializeField] private GameObject iceEffectsPrefab;
     [SerializeField] private GameObject fireEffectsPrefab;
     [SerializeField] private GameObject electricEffectsPrefab;
+    [SerializeField] private GameObject rarityDisplay;
+    [SerializeField] private GameObject[] yellowStarsRarity;
+    [SerializeField] private GameObject[] purpleStarsRarity;
 
     [Header("Rate and price")]
     [SerializeField] private int price = 10;
@@ -32,14 +35,9 @@ public class GachaManager : MonoBehaviour {
     [Header("Images")]
     [SerializeField] private Image resultImage;
 
-    [Header("Animators")]
-    [SerializeField] private Animator animCard;
-    [SerializeField] private Animator animPoison;
-    [SerializeField] private Animator animIce;
-    [SerializeField] private Animator animFire;
-    [SerializeField] private Animator animElectric;
-
     [Header("Settings")]
+    [SerializeField] private float animRarityTime = 1f;
+    [SerializeField] private float animDelayStarsTime = 0.5f;
     [SerializeField] private float animCardTime = 4.0f;
     [SerializeField] private float nextPullDelay = 2.0f;
     [SerializeField] private float displayErrorMessageTime = 5.0f;
@@ -113,6 +111,51 @@ public class GachaManager : MonoBehaviour {
         }
     }
 
+    private void DisableStars()
+    {
+        for (int i = 0; i < yellowStarsRarity.Length; i++) {
+            yellowStarsRarity[i].SetActive(false);
+        }
+
+        for (int i = 0; i < purpleStarsRarity.Length; i++) {
+            purpleStarsRarity[i].SetActive(false);
+        }
+    }
+
+    private void DisplayYellowStarsRarity(int rarity)
+    {
+        for (int i = 0; i < yellowStarsRarity.Length; i++) {
+            if (i < rarity) {
+                StartCoroutine(YellowStarsEffects(i));
+            } else {
+                yellowStarsRarity[i].SetActive(false);
+            }
+        }
+    }
+
+    private void DisplayPurpleStarsRarity(int rarity)
+    {
+        for (int i = 0; i < purpleStarsRarity.Length; i++) {
+            if (i < rarity) {
+                StartCoroutine(PurpleStarsEffects(i));
+            } else {
+                purpleStarsRarity[i].SetActive(false);
+            }
+        }
+    }
+
+    private void DisplayRarityStars(int rarity)
+    {
+        if (rarity == 6)
+        {
+            DisplayPurpleStarsRarity(rarity);
+        }
+        else
+        {
+            DisplayYellowStarsRarity(rarity);
+        }
+    }
+
     private void SetDefaultAll()
     {
         resultText.text = "";
@@ -122,6 +165,13 @@ public class GachaManager : MonoBehaviour {
         iceEffectsPrefab.SetActive(false);
         fireEffectsPrefab.SetActive(false);
         electricEffectsPrefab.SetActive(false);
+        rarityDisplay.SetActive(false);
+        DisableStars();
+    }
+
+    private void DisplayRarity()
+    {
+        rarityDisplay.SetActive(true);
     }
 
     private void DisplayCurrentBalance()
@@ -222,11 +272,26 @@ public class GachaManager : MonoBehaviour {
     {
         BackgroundAnimations(item);
         yield return new WaitForSeconds(animCardTime);
+        DisplayRarity();
         CardEffects();
+        yield return new WaitForSeconds(animRarityTime);
+        DisplayRarityStars(item.rarity);
         yield return new WaitForSeconds(nextPullDelay);
         EnableButton();
         AppearBalanceText();
         pullCoroutineState = false;
+    }
+
+    IEnumerator YellowStarsEffects(int i)
+    {
+        yellowStarsRarity[i].SetActive(true);
+        yield return new WaitForSeconds(animDelayStarsTime);
+    }
+
+    IEnumerator PurpleStarsEffects(int i)
+    {
+        purpleStarsRarity[i].SetActive(true);
+        yield return new WaitForSeconds(animDelayStarsTime);
     }
 
     IEnumerator ShowAndHide()

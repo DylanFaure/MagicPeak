@@ -13,6 +13,7 @@ public class Item : ScriptableObject
 {
     public string nameCard;
     public Sprite sprite;
+    public int rarity;
 
     public enum EnumElements { None, Poison, Ice, Fire, Electric };
     public EnumElements firstElement;
