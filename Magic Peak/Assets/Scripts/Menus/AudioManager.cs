@@ -28,10 +28,6 @@ public class AudioManager : MonoBehaviour
             musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
             menuVolume = PlayerPrefs.GetFloat("MenuVolume");
-            Debug.Log("MasterVolume: " + masterVolume);
-            Debug.Log("MusicVolume: " + musicVolume);
-            Debug.Log("SFXVolume: " + sfxVolume);
-            Debug.Log("MenuVolume: " + menuVolume);
             ApplyToSliders();
             SetVolume("All");
 
