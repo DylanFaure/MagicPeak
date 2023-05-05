@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // -----------------------------------------------------------------------------------------
     // private members
     private Vector2 movement;
+    private bool onIce = false;
 
     // -----------------------------------------------------------------------------------------
     // awake method to initialisation
@@ -35,11 +36,26 @@ public class PlayerMovement : MonoBehaviour
         // update members
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+        Debug.Log("NORMAL");
     }
     // -----------------------------------------------------------------------------------------
     // fixed update methode
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag == "Icy") {
+            print("Entered ice collider");
+            onIce = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.gameObject.tag == "Icy") {
+            print("Exited ice collider");
+            onIce = false;
+        }
     }
 }
