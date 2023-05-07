@@ -8,6 +8,11 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 2f;
     public float attackDelay = 2f;
 
+    public int maxHealth = 100;
+    public int currentHealth;
+    
+    public HealthBar healthBar;
+
     private GameObject player;
     private float timeSinceLastAttack;
     private bool isChasing = false;
@@ -16,11 +21,26 @@ public class EnemyAI : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         timeSinceLastAttack = attackDelay;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     void Update()
     {
         ChasePlayer();
+        GetHitByPlayer();
+        DestroyEnemy();
+        // Manque le contact avec les attaques du joueurs
+    }
+
+    private void GetHitByPlayer()
+    {
+        // Example purpose. Remove it
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Take Damage !");
+            TakeDamage(20);
+        }
     }
 
     private void ChasePlayer()
@@ -49,8 +69,23 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void Attack()
+    private void Attack()
     {
         Debug.Log("Enemy attacks!");
+        // Put animation atack and amage dealing here
+    }
+
+    private void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    private void DestroyEnemy()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
