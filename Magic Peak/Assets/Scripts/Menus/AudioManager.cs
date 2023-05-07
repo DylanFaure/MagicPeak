@@ -10,24 +10,24 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Toggle muteButton;
     [SerializeField] private Slider masterVolumeSlider;
     [SerializeField] private Slider musicVolumeSlider;
-    [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private Slider menuVolumeSlider;
+    [SerializeField] private Slider SFXVolumeSlider;
+    [SerializeField] private Slider menusSFXVolumeSlider;
 
     private float beforeMute = 1f;
 
     private float masterVolume = 1f;
     private float musicVolume = 1f;
     private float sfxVolume = 1f;
-    private float menuVolume = 1f;
+    private float menusVolume = 1f;
 
     private void Start()
     {
-        if (PlayerPrefs.HasKey("MasterVolume"))
+        if (PlayerPrefs.HasKey("MasterVolume") && PlayerPrefs.HasKey("MusicVolume") && PlayerPrefs.HasKey("SFXVolume") && PlayerPrefs.HasKey("MenusVolume"))
         {
             masterVolume = PlayerPrefs.GetFloat("MasterVolume");
             musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             sfxVolume = PlayerPrefs.GetFloat("SFXVolume");
-            menuVolume = PlayerPrefs.GetFloat("MenuVolume");
+            menusVolume = PlayerPrefs.GetFloat("MenusVolume");
             ApplyToSliders();
             SetVolume("All");
 
@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
             masterVolume = 1f;
             musicVolume = 0.8f;
             sfxVolume = 1f;
-            menuVolume = 1f;
+            menusVolume = 1f;
             ApplyToSliders();
             ApplyToMixer();
         }
@@ -45,8 +45,8 @@ public class AudioManager : MonoBehaviour
     {
         masterVolumeSlider.value = masterVolume;
         musicVolumeSlider.value = musicVolume;
-        sfxVolumeSlider.value = sfxVolume;
-        menuVolumeSlider.value = menuVolume;
+        SFXVolumeSlider.value = sfxVolume;
+        menusSFXVolumeSlider.value = menusVolume;
     }
 
     private void ApplyToMixer()
@@ -77,14 +77,14 @@ public class AudioManager : MonoBehaviour
         }
         PlayerPrefs.SetFloat("SFXVolume", sfxVolume);
 
-        if (menuVolume <= 0)
+        if (menusVolume <= 0)
         {
-            audioMixer.SetFloat("MenuVolume", -80f);
+            audioMixer.SetFloat("MenusVolume", -80f);
         } else
         {
-            audioMixer.SetFloat("MenuVolume", Mathf.Log10(menuVolume) * 20);
+            audioMixer.SetFloat("MenusVolume", Mathf.Log10(menusVolume) * 20);
         }
-        PlayerPrefs.SetFloat("MenuVolume", menuVolume);
+        PlayerPrefs.SetFloat("MenusVolume", menusVolume);
     }
 
     public void SetVolume(string which)
@@ -98,16 +98,16 @@ public class AudioManager : MonoBehaviour
                 musicVolume = musicVolumeSlider.value;
                 break;
             case "SFX":
-                sfxVolume = sfxVolumeSlider.value;
+                sfxVolume = SFXVolumeSlider.value;
                 break;
-            case "Menu":
-                menuVolume = menuVolumeSlider.value;
+            case "Menus":
+                menusVolume = menusSFXVolumeSlider.value;
                 break;
             case "All":
                 masterVolume = masterVolumeSlider.value;
                 musicVolume = musicVolumeSlider.value;
-                sfxVolume = sfxVolumeSlider.value;
-                menuVolume = menuVolumeSlider.value;
+                sfxVolume = SFXVolumeSlider.value;
+                menusVolume = menusSFXVolumeSlider.value;
                 break;
         }
         ApplyToMixer();
