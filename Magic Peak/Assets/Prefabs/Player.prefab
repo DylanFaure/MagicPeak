@@ -202,12 +202,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3234fdfafb3cf244c91e72bc07e9f5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 4
   rb: {fileID: 3004260406094405088}
   playerMovePoint: {fileID: 3004260405898034728}
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 64
+  ice:
+    serializedVersion: 2
+    m_Bits: 128
   animator: {fileID: 3004260406094405095}
 --- !u!114 &3451761195025916396
 MonoBehaviour:
@@ -225,7 +228,7 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   animator: {fileID: 3004260406094405095}
   spriteRenderer: {fileID: 3004260406094405090}
-  SpriteSheetName: Misa
+  SpriteSheetName: Vega
 --- !u!1 &3004260406989730776
 GameObject:
   m_ObjectHideFlags: 0
