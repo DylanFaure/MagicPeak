@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // private members
     private Vector2 movement;
     private bool isCastingSpell = false;
+    private bool isSliding = false;
 
     // -----------------------------------------------------------------------------------------
     // awake method to initialisation
@@ -76,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
             MovePlayer();
             // }
             PlayerIsMovingAnimation();
+            PlayerSpellCast();
         }
     }
 
@@ -87,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Vector3.Distance(transform.position, playerMovePoint.position) <= .05f)
         {
+            isSliding = false;
             if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Top"))))
             {
                 if (!Physics2D.OverlapCircle(playerMovePoint.position + new Vector3(0f, 0.5f, 0f), .2f, whatStopsMovement))
@@ -164,6 +167,10 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
         }
+        else
+        {
+            isSliding = true;
+        }
     }
 
     // -----------------------------------------------------------------------------------------
@@ -226,27 +233,27 @@ public class PlayerMovement : MonoBehaviour
     // player spellcast method
     void PlayerSpellCast()
     {
-        if (!isCastingSpell)
+        if (isSliding)
+            return;
+
+        // TEMPORAIRE -- TESTS
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            // TEMPORAIRE -- TESTS
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                animator.SetBool("spellCast1", true);
-                isCastingSpell = true;
-                StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
-            }
-            else if (Input.GetKeyDown(KeyCode.R))
-            {
-                animator.SetBool("spellCast2", true);
-                isCastingSpell = true;
-                StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
-            }
-            else if (Input.GetKeyDown(KeyCode.T))
-            {
-                animator.SetBool("death", true);
-                isCastingSpell = true;
-                StartCoroutine(SetAnimationWithTime("death", 4f));
-            }
+            animator.SetBool("spellCast1", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            animator.SetBool("spellCast2", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            animator.SetBool("death", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("death", 4f));
         }
     }
 
