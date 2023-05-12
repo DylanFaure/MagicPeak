@@ -81,10 +81,7 @@ public class EnemyAI : MonoBehaviour
 
     public void Attack()
     {
-        // Do attack animation
-
         player.GetComponent<PlayerStats>().TakeDamage(attackDamage);
-        Debug.Log("Enemy attacks!");
     }
 
     private void TakeDamage(float damage)
