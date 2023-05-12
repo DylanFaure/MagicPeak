@@ -10,6 +10,7 @@ public class LoadSpriteCharacter : MonoBehaviour
     [SerializeField] private string SpriteSheetName;
 
     private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private Vector2 previousPosition;
     private Vector2 movement;
     private string LoadedSpriteSheetName;
@@ -18,9 +19,12 @@ public class LoadSpriteCharacter : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         instance = this;
         previousPosition = transform.position;
         this.LoadSpriteSheet();
+        animator.SetFloat("speed", 0);
+        animator.SetInteger("orientation", 4);
     }
 
     void FixedUpdate()
@@ -29,6 +33,8 @@ public class LoadSpriteCharacter : MonoBehaviour
         movement.y = transform.position.y - previousPosition.y;
 
         previousPosition = transform.position;
+
+        AnimationUpdate();
     }
 
     private void LateUpdate()
@@ -41,6 +47,19 @@ public class LoadSpriteCharacter : MonoBehaviour
         this.spriteRenderer.sprite = this.spriteSheetDictionnary[this.spriteRenderer.sprite.name];
     }
 
+    public void AnimationUpdate()
+    {
+        animator.SetFloat("speed", Mathf.Abs(movement.x) + Mathf.Abs(movement.y));
+        if (movement.x > 0)
+            animator.SetInteger("orientation", 6);
+        if (movement.x < 0)
+            animator.SetInteger("orientation", 2);
+        if (movement.y > 0)
+            animator.SetInteger("orientation", 0);
+        if (movement.y < 0)
+            animator.SetInteger("orientation", 4);
+    }
+
     private void LoadSpriteSheet()
     {
         string spritesheetfolder = "Enemies/";
@@ -48,7 +67,7 @@ public class LoadSpriteCharacter : MonoBehaviour
         var sprites = Resources.LoadAll<Sprite>(spritesheetfilepath);
         if (sprites.Count() == 0)
         {
-            spritesheetfilepath = spritesheetfolder + "guard-1/spritesheet";
+            spritesheetfilepath = spritesheetfolder + "Jin/spritesheet";
             sprites = Resources.LoadAll<Sprite>(spritesheetfilepath);
         }
 
