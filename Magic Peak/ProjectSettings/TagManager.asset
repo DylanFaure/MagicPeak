@@ -4,28 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - tree_layer_4
-=======
-  - Ice
   - EnemyAttack
-  - PlayerAttack
->>>>>>> main
-=======
-  - Ice
-  - EnemyAttack
-  - PlayerAttack
->>>>>>> main
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ice
+  - 
   - Water
   - UI
-  - Obstacle
-  - Ice
+  - 
+  - 
   - 
   - 
   - 
@@ -53,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Spells
+    uniqueID: 4080498297
     locked: 0

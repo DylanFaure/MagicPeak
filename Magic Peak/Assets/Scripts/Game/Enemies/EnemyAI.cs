@@ -84,7 +84,7 @@ public class EnemyAI : MonoBehaviour
         player.GetComponent<PlayerStats>().TakeDamage(attackDamage);
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
