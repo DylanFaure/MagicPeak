@@ -16027,6 +16027,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minautor_Poison
       objectReference: {fileID: 0}
+    - target: {fileID: 4840471094337774249, guid: 3b6c95420cf23d24f893ecbc847b04fc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6c95420cf23d24f893ecbc847b04fc, type: 3}
 --- !u!1001 &667283790077193427
@@ -16047,6 +16051,10 @@ PrefabInstance:
     - target: {fileID: 4805214062598949764, guid: c73b15ef3c4996e4593c37a43c9c66c6, type: 3}
       propertyPath: m_Name
       value: Blob_Poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 4805214062598949764, guid: c73b15ef3c4996e4593c37a43c9c66c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4805214062598949772, guid: c73b15ef3c4996e4593c37a43c9c66c6, type: 3}
       propertyPath: playerStats
@@ -16116,6 +16124,10 @@ PrefabInstance:
     - target: {fileID: 4789043044079567858, guid: 70ae4fdfb23cec24d8bfaf62539f11cc, type: 3}
       propertyPath: m_Name
       value: Scorpion_Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789043044079567858, guid: 70ae4fdfb23cec24d8bfaf62539f11cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4789043044079567866, guid: 70ae4fdfb23cec24d8bfaf62539f11cc, type: 3}
       propertyPath: playerStats
@@ -16234,6 +16246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Elec
       objectReference: {fileID: 0}
+    - target: {fileID: 4681806805106734874, guid: 3e3694a4e1984e84392269a800ecfdae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e3694a4e1984e84392269a800ecfdae, type: 3}
 --- !u!1001 &1042853582879367574
@@ -16254,6 +16270,10 @@ PrefabInstance:
     - target: {fileID: 5014145102461063495, guid: 4ffe45b4c61ca1b459900b0bdc113c42, type: 3}
       propertyPath: m_Name
       value: Pirate_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014145102461063495, guid: 4ffe45b4c61ca1b459900b0bdc113c42, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5014145102461063502, guid: 4ffe45b4c61ca1b459900b0bdc113c42, type: 3}
       propertyPath: m_RootOrder
@@ -16372,6 +16392,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Ice
       objectReference: {fileID: 0}
+    - target: {fileID: 6752619275151061117, guid: 7734eb6f1e3f4a84e8d61603dc988c0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7734eb6f1e3f4a84e8d61603dc988c0d, type: 3}
 --- !u!1001 &2389539300063052151
@@ -16392,6 +16416,10 @@ PrefabInstance:
     - target: {fileID: 7693413684545051013, guid: ecc4fde747ef53348ac688f6a53f6441, type: 3}
       propertyPath: m_Name
       value: Ghost_Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693413684545051013, guid: ecc4fde747ef53348ac688f6a53f6441, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7693413684545051020, guid: ecc4fde747ef53348ac688f6a53f6441, type: 3}
       propertyPath: m_RootOrder
@@ -16462,6 +16490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Poison
       objectReference: {fileID: 0}
+    - target: {fileID: 7907184449306792368, guid: d5bf2ac467a5a074aa9dd85618d863a9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7907184449306792376, guid: d5bf2ac467a5a074aa9dd85618d863a9, type: 3}
       propertyPath: playerStats
       value: 
@@ -16530,6 +16562,10 @@ PrefabInstance:
     - target: {fileID: 7822050146383661840, guid: 3c24b7a316e6a8d4b81c22e8468ac61a, type: 3}
       propertyPath: m_Name
       value: Zombie_Elec
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822050146383661840, guid: 3c24b7a316e6a8d4b81c22e8468ac61a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7822050146383661848, guid: 3c24b7a316e6a8d4b81c22e8468ac61a, type: 3}
       propertyPath: playerStats
@@ -16600,6 +16636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jin_Diabolic
       objectReference: {fileID: 0}
+    - target: {fileID: 7336898560495223170, guid: c4ac024b72ff58c42a88190ed2087cd8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7336898560495223178, guid: c4ac024b72ff58c42a88190ed2087cd8, type: 3}
       propertyPath: playerStats
       value: 
@@ -16669,6 +16709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 9211448616784894837, guid: 1fcc11150cfac884aab48508e81f3fcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9211448616784894844, guid: 1fcc11150cfac884aab48508e81f3fcd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -16729,6 +16773,10 @@ PrefabInstance:
     - target: {fileID: 8312784650497069409, guid: ee3d23e64e215a14299e875fcd9d88a0, type: 3}
       propertyPath: m_Name
       value: Pirate_Elec
+      objectReference: {fileID: 0}
+    - target: {fileID: 8312784650497069409, guid: ee3d23e64e215a14299e875fcd9d88a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8312784650497069416, guid: ee3d23e64e215a14299e875fcd9d88a0, type: 3}
       propertyPath: m_RootOrder
@@ -16806,6 +16854,10 @@ PrefabInstance:
     - target: {fileID: 8507414955064283474, guid: b1f99e4d31655574799e72618ffda1b4, type: 3}
       propertyPath: m_Name
       value: Minautor_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507414955064283474, guid: b1f99e4d31655574799e72618ffda1b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8507414955064283482, guid: b1f99e4d31655574799e72618ffda1b4, type: 3}
       propertyPath: playerStats
@@ -16924,6 +16976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blob_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 4737148952872281629, guid: 718ed10d138cc0143a40544d2f1eb877, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 718ed10d138cc0143a40544d2f1eb877, type: 3}
 --- !u!1001 &5546131699136888903
@@ -16984,6 +17040,10 @@ PrefabInstance:
     - target: {fileID: 511992864643040616, guid: a70d9dd515ba5504282cba368da6341f, type: 3}
       propertyPath: m_Name
       value: Pirate_Poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 511992864643040616, guid: a70d9dd515ba5504282cba368da6341f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 511992865784672771, guid: a70d9dd515ba5504282cba368da6341f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -17054,6 +17114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jin
       objectReference: {fileID: 0}
+    - target: {fileID: 314019988655213183, guid: 073b1bc462b191c4bb9a5370ce727f9f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 314019989661089044, guid: 073b1bc462b191c4bb9a5370ce727f9f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17082,6 +17146,10 @@ PrefabInstance:
     - target: {fileID: 1208522062854335509, guid: b78a83efd005eea43bc183273abfbeda, type: 3}
       propertyPath: m_Name
       value: Scorpion_Elec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208522062854335509, guid: b78a83efd005eea43bc183273abfbeda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1208522062854335516, guid: b78a83efd005eea43bc183273abfbeda, type: 3}
       propertyPath: m_RootOrder
@@ -17192,6 +17260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pirate_Ice
       objectReference: {fileID: 0}
+    - target: {fileID: 3224865487544259835, guid: 1350ce87bb31595438a3c867fa3e55ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3224865488681722768, guid: 1350ce87bb31595438a3c867fa3e55ab, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17212,6 +17284,10 @@ PrefabInstance:
     - target: {fileID: 2683254785215396961, guid: ca9dc358ec680f34a9b1cfaa28cb9020, type: 3}
       propertyPath: m_Name
       value: Zombie_Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2683254785215396961, guid: ca9dc358ec680f34a9b1cfaa28cb9020, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2683254785215396968, guid: ca9dc358ec680f34a9b1cfaa28cb9020, type: 3}
       propertyPath: m_RootOrder
@@ -17338,6 +17414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scorpion_Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 4313427524584075165, guid: 123c4f5387991274d84783c28c528100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123c4f5387991274d84783c28c528100, type: 3}
 --- !u!1001 &8335126427455416268
@@ -17399,6 +17479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie_Poison
       objectReference: {fileID: 0}
+    - target: {fileID: 4053651956245149676, guid: ea1f8c8c7cba5b24e9990f5a0b505dea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4053651957254668423, guid: ea1f8c8c7cba5b24e9990f5a0b505dea, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -17427,6 +17511,10 @@ PrefabInstance:
     - target: {fileID: 4494174028994776646, guid: ed0787145192a314a8c7e5e441eff3f4, type: 3}
       propertyPath: m_Name
       value: Zombie_Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 4494174028994776646, guid: ed0787145192a314a8c7e5e441eff3f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4494174028994776654, guid: ed0787145192a314a8c7e5e441eff3f4, type: 3}
       propertyPath: playerStats
