@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float attackDistance = 5f;
-    public float moveSpeed = 2f;
-    public float attackDelay = 2f;
-
-    public int maxHealth = 100;
-    public int currentHealth;
+    [Header("Stats")]
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float currentHealth = 0f;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float attackDelay = 2f;
+    [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float attackTimer = 0f;
+    [SerializeField] private float visionRange = 10f;
     
-    public HealthBar healthBar;
+    [Header("Settings")]
+    [SerializeField] private HealthBar healthBar;
+    [SerializeField] private PlayerStats playerStats;
 
-    private GameObject player;
-    private float timeSinceLastAttack;
+    private Transform player;
     private bool isChasing = false;
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        timeSinceLastAttack = attackDelay;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
@@ -28,54 +31,60 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         ChasePlayer();
-        GetHitByPlayer();
         DestroyEnemy();
-        // Manque le contact avec les attaques du joueurs
     }
 
-    private void GetHitByPlayer()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Example purpose. Remove it
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Check if enemy has been attacked by player. If yes, lose hp.
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Take Damage !");
-            TakeDamage(20);
+            TakeDamage(playerStats.GetAttackPlayer());
         }
     }
 
     private void ChasePlayer()
     {
-        if (player != null)
-        {
-            Vector3 playerDirection = player.transform.position - transform.position;
-            float distanceToPlayer = playerDirection.magnitude;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, playerDirection, distanceToPlayer);
+        // Check the distance between player/enemy
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-            if (isChasing)
+        // If enemy can see player, keep hasing him
+        if (distanceToPlayer <= visionRange)
+        {
+            isChasing = true;
+        }
+
+        if (isChasing)
+        {
+            // Check if player is in attack range
+            if (distanceToPlayer <= attackRange)
             {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-            }
-            if (distanceToPlayer <= attackDistance && hit.collider != null && hit.collider.tag == "Player")
-            {
-                isChasing = true;
-                timeSinceLastAttack += Time.deltaTime;
-                if (timeSinceLastAttack >= attackDelay)
+                // Timer for attacks at every desired time
+                if (attackTimer <= 0f)
                 {
                     Attack();
-                    timeSinceLastAttack = 0f;
+                    attackTimer = attackDelay;
+                }
+                else
+                {
+                    // Reset the attack timer
+                    attackTimer -= Time.deltaTime;
                 }
             }
-            
+            else
+            {
+                // Move the enemy to chase the player
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            }
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
-        Debug.Log("Enemy attacks!");
-        // Put animation atack and amage dealing here
+        player.GetComponent<PlayerStats>().TakeDamage(attackDamage);
     }
 
-    private void TakeDamage(int damage)
+    private void TakeDamage(float damage)
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
