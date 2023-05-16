@@ -41,6 +41,14 @@ public class GachaManager : MonoBehaviour {
     [SerializeField] private float animCardTime = 4.0f;
     [SerializeField] private float nextPullDelay = 2.0f;
     [SerializeField] private float displayErrorMessageTime = 5.0f;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip threeStarPull;
+    [SerializeField] private AudioClip fourStarPull;
+    [SerializeField] private AudioClip fiveStarPull;
+    [SerializeField] private AudioClip[] purpleStarsPull;
+    [SerializeField] private float defaultSFXVolume = 0.5f;
     
     private bool pullCoroutineState = false;
     private int balance = 0;
@@ -122,37 +130,62 @@ public class GachaManager : MonoBehaviour {
         }
     }
 
-    private void DisplayYellowStarsRarity(int rarity)
+    IEnumerator DisplayYellowStarsRarity(int rarity)
     {
-        for (int i = 0; i < yellowStarsRarity.Length; i++) {
-            if (i < rarity) {
-                StartCoroutine(YellowStarsEffects(i));
-            } else {
-                yellowStarsRarity[i].SetActive(false);
-            }
+        if (audioSource.volume <= 0)
+        {
+            audioSource.volume = defaultSFXVolume;
         }
+        float previousAudioSourceVolume = audioSource.volume;
+        audioSource.volume = previousAudioSourceVolume * 0.5f;
+        for (int i = 0; i < rarity; i++)
+        {
+            if (i < 3)
+            {
+                audioSource.PlayOneShot(threeStarPull);
+            }
+            else if (i < 4)
+            {
+                audioSource.volume = audioSource.volume + (audioSource.volume / 1.2f);
+                audioSource.PlayOneShot(fourStarPull);
+            }
+            else
+            {
+                audioSource.volume = previousAudioSourceVolume;
+                audioSource.PlayOneShot(fiveStarPull);
+            }
+            yellowStarsRarity[i].SetActive(true);
+            yield return new WaitForSeconds(animDelayStarsTime);
+        }
+        audioSource.volume = previousAudioSourceVolume;
     }
 
-    private void DisplayPurpleStarsRarity(int rarity)
+    IEnumerator DisplayPurpleStarsRarity()
     {
-        for (int i = 0; i < purpleStarsRarity.Length; i++) {
-            if (i < rarity) {
-                StartCoroutine(PurpleStarsEffects(i));
-            } else {
-                purpleStarsRarity[i].SetActive(false);
-            }
+        if (audioSource.volume <= 0)
+        {
+            audioSource.volume = defaultSFXVolume;
         }
+        float previousAudioSourceVolume = audioSource.volume;
+        for (int i = 0; i < purpleStarsRarity.Length; i++)
+        {
+            audioSource.volume = previousAudioSourceVolume * (i * 0.1f + 0.4f);
+            purpleStarsRarity[i].SetActive(true);
+            audioSource.PlayOneShot(purpleStarsPull[i]);
+            yield return new WaitForSeconds(animDelayStarsTime);
+        }
+        audioSource.volume = previousAudioSourceVolume;
     }
 
     private void DisplayRarityStars(int rarity)
     {
         if (rarity == 6)
         {
-            DisplayPurpleStarsRarity(rarity);
+            StartCoroutine(DisplayPurpleStarsRarity());
         }
         else
         {
-            DisplayYellowStarsRarity(rarity);
+            StartCoroutine(DisplayYellowStarsRarity(rarity));
         }
     }
 
@@ -271,11 +304,11 @@ public class GachaManager : MonoBehaviour {
     IEnumerator PullAnimation(Item item)
     {
         BackgroundAnimations(item);
-        yield return new WaitForSeconds(animCardTime);
         DisplayRarity();
-        CardEffects();
         yield return new WaitForSeconds(animRarityTime);
         DisplayRarityStars(item.rarity);
+        yield return new WaitForSeconds(animCardTime);
+        CardEffects();
         yield return new WaitForSeconds(nextPullDelay);
         EnableButton();
         AppearBalanceText();
