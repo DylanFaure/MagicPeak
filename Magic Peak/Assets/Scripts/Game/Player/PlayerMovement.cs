@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         if (!PlayerPrefs.HasKey("Top"))
         {
             PlayerPrefs.SetString("Top", "Z");
+            PlayerPrefs.Save();
         }
 
         if (!PlayerPrefs.HasKey("Bottom"))
