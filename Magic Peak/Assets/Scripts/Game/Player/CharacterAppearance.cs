@@ -19,9 +19,6 @@ public class CharacterAppearance : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
-    // The name of the sprite sheet to use
-    public string SpriteSheetName;
-
     // -----------------------------------------------------------------------------------------
     // private members
     private Vector2 previousPosition;
@@ -44,12 +41,6 @@ public class CharacterAppearance : MonoBehaviour
     }
 
     // -----------------------------------------------------------------------------------------
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    // -----------------------------------------------------------------------------------------
     // fixed update methode
     void FixedUpdate()
     {
@@ -57,15 +48,13 @@ public class CharacterAppearance : MonoBehaviour
         movement.y = tf.position.y - previousPosition.y;
 
         previousPosition = tf.position;
-
-        animationUpdate();
     }
 
         // Runs after the animation has done its work
         private void LateUpdate()
     {
         // Check if the sprite sheet name has changed (possibly manually in the inspector)
-        if (this.LoadedSpriteSheetName != this.SpriteSheetName)
+        if (this.LoadedSpriteSheetName != PlayerPrefs.GetString("CharacterSelected"))
         {
             // Load the new sprite sheet
             this.LoadSpriteSheet();
@@ -77,18 +66,13 @@ public class CharacterAppearance : MonoBehaviour
     }
 
     // -----------------------------------------------------------------------------------------
-    // Set the animation parameters
-    public void animationUpdate()
-    {
-    }
-    // -----------------------------------------------------------------------------------------
     // Loads the sprites from a sprite sheet
     private void LoadSpriteSheet()
     {
         // Load the sprites from a sprite sheet file (png). 
         // Note: The file specified must exist in a folder named Resources
         string spritesheetfolder = "Characters/";
-        string spritesheetfilepath = spritesheetfolder + this.SpriteSheetName + "/spritesheet";
+        string spritesheetfilepath = spritesheetfolder + PlayerPrefs.GetString("CharacterSelected") + "/spritesheet";
         var sprites = Resources.LoadAll<Sprite>(spritesheetfilepath);
         if (sprites.Count() == 0)
         {
@@ -99,6 +83,6 @@ public class CharacterAppearance : MonoBehaviour
         this.spriteSheet = sprites.ToDictionary(x => x.name, x => x);
 
         // Remember the name of the sprite sheet in case it is changed later
-        this.LoadedSpriteSheetName = this.SpriteSheetName;
+        this.LoadedSpriteSheetName = PlayerPrefs.GetString("CharacterSelected");
     }
 }

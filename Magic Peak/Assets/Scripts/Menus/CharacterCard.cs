@@ -29,4 +29,14 @@ public class CharacterCard : MonoBehaviour
             characterName.text = gameObject.name;
         }
     }
+
+    public void SelectCharacter()
+    {
+        if (PlayerPrefs.GetInt(gameObject.name) == 0)
+        {
+            return;
+        }
+        PlayerPrefs.SetString("CharacterSelected", gameObject.name);
+        PlayerPrefs.Save();
+    }
 }
