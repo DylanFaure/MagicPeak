@@ -10,10 +10,10 @@ public class Ability : ScriptableObject
     public float activeTime;
     public float damage;
     public float range;
-    public float radius;
     public float speed;
     public float shield;
     public float heal;
+    public float chargeTime;
     public AbilityClass abilityClass;
     public GameObject prefab;
 

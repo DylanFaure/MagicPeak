@@ -97,15 +97,10 @@ public class CharacterAbilityHandler : MonoBehaviour
         switch (ability.ability.abilityClass)
         {
             case Ability.AbilityClass.Projectile:
-                GameObject projectile = Instantiate(ability.ability.prefab, transform.position, Quaternion.identity);
-                projectile.GetComponent<ProjectileSpell>().damage = ability.ability.damage;
-                projectile.GetComponent<ProjectileSpell>().speed = ability.ability.speed;
-                projectile.GetComponent<ProjectileSpell>().range = ability.ability.range;
-                projectile.GetComponent<ProjectileSpell>().radius = ability.ability.radius;
-                projectile.GetComponent<ProjectileSpell>().SetTarget(mousePos);
+                ActivateProjectileSpell(ability, mousePos);
                 break;
             case Ability.AbilityClass.Oncursor:
-                GameObject oncursor = Instantiate(ability.ability.prefab, mousePos, Quaternion.identity);
+                ActivateOnCursorSpell(ability, mousePos);
                 break;
             case Ability.AbilityClass.Selfcast:
                 GameObject selfcast = Instantiate(ability.ability.prefab, transform.position, Quaternion.identity);
@@ -119,5 +114,32 @@ public class CharacterAbilityHandler : MonoBehaviour
     {
         AbilityContainer ability = abilities[abilityIndex];
         ActivateAbility(ability);
+    }
+
+    private void ActivateProjectileSpell(AbilityContainer ability, Vector3 mousePos)
+    {
+        GameObject projectile = Instantiate(ability.ability.prefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<ProjectileSpell>().damage = ability.ability.damage;
+        projectile.GetComponent<ProjectileSpell>().speed = ability.ability.speed;
+        projectile.GetComponent<ProjectileSpell>().range = ability.ability.range;
+        projectile.GetComponent<ProjectileSpell>().SetTarget(mousePos);
+    }
+
+    private void ActivateOnCursorSpell(AbilityContainer ability, Vector3 mousePos)
+    {
+        // check if mousePos is in ability range
+        if (Vector3.Distance(transform.position, mousePos) > ability.ability.range)
+        {
+            Debug.Log("Target out of range");
+            return;
+        }
+
+        Debug.Log("Target in range");
+        GameObject oncursor = Instantiate(ability.ability.prefab, mousePos, Quaternion.identity);
+        oncursor.GetComponent<OnCursorSpell>().damage = ability.ability.damage;
+        oncursor.GetComponent<OnCursorSpell>().range = ability.ability.range;
+        oncursor.GetComponent<OnCursorSpell>().chargeTime = ability.ability.chargeTime;
+        oncursor.GetComponent<OnCursorSpell>().activeTime = ability.ability.activeTime;
+        oncursor.GetComponent<OnCursorSpell>().SetTarget(mousePos);
     }
 }

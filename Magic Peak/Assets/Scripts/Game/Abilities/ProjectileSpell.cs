@@ -8,7 +8,6 @@ public class ProjectileSpell : MonoBehaviour
     public float speed;
     public float damage;
     public float range;
-    public float radius;
     public Vector3 direction;
 
     void Awake()
