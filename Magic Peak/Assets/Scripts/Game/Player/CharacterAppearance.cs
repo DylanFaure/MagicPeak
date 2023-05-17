@@ -92,7 +92,7 @@ public class CharacterAppearance : MonoBehaviour
         var sprites = Resources.LoadAll<Sprite>(spritesheetfilepath);
         if (sprites.Count() == 0)
         {
-            spritesheetfilepath = spritesheetfolder + "Vega/spritesheet";
+            spritesheetfilepath = spritesheetfolder + "Roger/spritesheet";
             sprites = Resources.LoadAll<Sprite>(spritesheetfilepath);
         }
 
