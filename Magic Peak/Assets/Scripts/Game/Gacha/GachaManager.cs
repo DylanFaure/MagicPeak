@@ -11,6 +11,7 @@ public class GachaManager : MonoBehaviour {
     [SerializeField] private Item[] epicItemList;
     [SerializeField] private Item[] hybridItemList;
     [SerializeField] private GameObject pullButton;
+    [SerializeField] private GameObject leaveButton;
     [SerializeField] private GameObject card;
     [SerializeField] private GameObject poisonEffectsPrefab;
     [SerializeField] private GameObject iceEffectsPrefab;
@@ -235,11 +236,13 @@ public class GachaManager : MonoBehaviour {
     private void DisableButton()
     {
         pullButton.SetActive(false);
+        leaveButton.SetActive(false);
     }
 
     private void EnableButton()
     {
         pullButton.SetActive(true);
+        leaveButton.SetActive(true);
     }
 
     private void CardEffects()

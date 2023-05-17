@@ -16,7 +16,7 @@ public class PlayerMenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             GameObject.Find("CharacterSelectionCanvas").GetComponent<Canvas>().enabled = !GameObject.Find("CharacterSelectionCanvas").GetComponent<Canvas>().enabled;
-            Time.timeScale = GameObject.Find("CharacterSelectionCanvas").GetComponent<Canvas>().enabled ? 0 : 1;
+            // Time.timeScale = GameObject.Find("CharacterSelectionCanvas").GetComponent<Canvas>().enabled ? 0 : 1;
         }
     }
 }
