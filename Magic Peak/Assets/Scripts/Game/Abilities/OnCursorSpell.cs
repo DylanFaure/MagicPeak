@@ -8,9 +8,11 @@ public class OnCursorSpell : MonoBehaviour
 
     [HideInInspector] public float damage;
     [HideInInspector] public float range;
-    [HideInInspector] public float activeTime;
     [HideInInspector] public float chargeTime;
     [HideInInspector] public Vector3 target;
+
+    [HideInInspector] public float activeTime;
+    private float timer;
 
     private void Awake()
     {
@@ -21,7 +23,15 @@ public class OnCursorSpell : MonoBehaviour
             Invoke("EnableCollider", chargeTime);
         }
         transform.position = target;
-        Destroy(gameObject, activeTime);
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= activeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetTarget(Vector3 mousePos)
@@ -31,16 +41,16 @@ public class OnCursorSpell : MonoBehaviour
         transform.position = mousePos;
     }
 
+    private void EnableCollider()
+    {
+        col.enabled = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
         }
-    }
-
-    private void EnableCollider()
-    {
-        col.enabled = true;
     }
 }

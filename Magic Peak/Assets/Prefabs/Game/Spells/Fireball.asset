@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   Name: Fireball
-  cooldownTime: 3
+  cooldownTime: 2
   activeTime: 0
-  damage: 5
-  range: 50
-  radius: 3
+  damage: 10
+  range: 25
   speed: 400
   shield: 0
   heal: 0
+  chargeTime: 0
   abilityClass: 0
   prefab: {fileID: 3466100806538052445, guid: 0c0127701bcc9c540b232be7f77120fe, type: 3}

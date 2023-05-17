@@ -45,23 +45,11 @@ public class AbilityContainer
 public class CharacterAbilityHandler : MonoBehaviour
 {
     [SerializeField] Ability startingAbility;
-
-    private List<AbilityContainer> abilities;
+    private AbilityContainer currentAbility;
 
     private void Start()
     {
-        AddAbility(startingAbility);
-    }
-
-    private void AddAbility(Ability abilityToAdd)
-    {
-        if (abilities == null)
-        {
-            abilities = new List<AbilityContainer>();
-        }
-
-        AbilityContainer abilityContainer = new AbilityContainer(abilityToAdd);
-        abilities.Add(abilityContainer);
+        currentAbility = new AbilityContainer(startingAbility);
     }
 
     private void Update()
@@ -70,16 +58,13 @@ public class CharacterAbilityHandler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            ActivateAbility(0);
+            ActivateAbility(currentAbility);
         }
     }
 
     private void ProcessCooldowns()
     {
-        for (int i = 0; i < abilities.Count; i++)
-        {
-            abilities[i].ReduceCooldown(Time.deltaTime);
-        }
+        currentAbility.ReduceCooldown(Time.deltaTime);
     }
 
     public void ActivateAbility(AbilityContainer ability)
@@ -92,12 +77,7 @@ public class CharacterAbilityHandler : MonoBehaviour
         Debug.Log("Ability activated");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
-        ability.Cooldown();
         ability.ability.Activate(gameObject, mousePos);
-    }
-    public void ActivateAbility(int abilityIndex)
-    {
-        AbilityContainer ability = abilities[abilityIndex];
-        ActivateAbility(ability);
+        ability.Cooldown();
     }
 }

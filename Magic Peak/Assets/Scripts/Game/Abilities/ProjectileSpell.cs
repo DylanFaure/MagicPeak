@@ -22,6 +22,14 @@ public class ProjectileSpell : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed * Time.fixedDeltaTime;
     }
 
+    public void SetTarget(Vector3 mousePos)
+    {
+        direction = mousePos - transform.position;
+
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + 90f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -29,13 +37,5 @@ public class ProjectileSpell : MonoBehaviour
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
             Destroy(gameObject);
         }
-    }
-
-    public void SetTarget(Vector3 mousePos)
-    {
-        direction = mousePos - transform.position;
-
-        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + 90f);
     }
 }

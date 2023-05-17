@@ -44,11 +44,11 @@ public class Ability : ScriptableObject
 
     private void ActivateProjectileSpell(GameObject caster, Vector3 mousePos)
     {
-        prefab.GetComponent<ProjectileSpell>().damage = damage;
-        prefab.GetComponent<ProjectileSpell>().speed = speed;
-        prefab.GetComponent<ProjectileSpell>().range = range;
-        prefab.GetComponent<ProjectileSpell>().SetTarget(mousePos);
-        Instantiate(prefab, caster.transform.position, Quaternion.identity);
+        GameObject projectile = Instantiate(prefab, caster.transform.position, Quaternion.identity);
+        projectile.GetComponent<ProjectileSpell>().damage = damage;
+        projectile.GetComponent<ProjectileSpell>().range = range;
+        projectile.GetComponent<ProjectileSpell>().speed = speed;
+        projectile.GetComponent<ProjectileSpell>().SetTarget(mousePos);
     }
 
     private void ActivateOnCursorSpell(GameObject caster, Vector3 mousePos)
@@ -62,12 +62,12 @@ public class Ability : ScriptableObject
 
         Debug.Log("Target in range");
 
-        prefab.GetComponent<OnCursorSpell>().damage = damage;
-        prefab.GetComponent<OnCursorSpell>().range = range;
-        prefab.GetComponent<OnCursorSpell>().activeTime = activeTime;
-        prefab.GetComponent<OnCursorSpell>().chargeTime = chargeTime;
-        prefab.GetComponent<OnCursorSpell>().target = mousePos;
-        Instantiate(prefab, mousePos, Quaternion.identity);
+        GameObject oncursor = Instantiate(prefab, mousePos, Quaternion.identity);
+        oncursor.GetComponent<OnCursorSpell>().damage = damage;
+        oncursor.GetComponent<OnCursorSpell>().range = range;
+        oncursor.GetComponent<OnCursorSpell>().activeTime = activeTime;
+        oncursor.GetComponent<OnCursorSpell>().chargeTime = chargeTime;
+        oncursor.GetComponent<OnCursorSpell>().SetTarget(mousePos);
     }
 
     private void ActivateSelfcastSpell(GameObject caster)
