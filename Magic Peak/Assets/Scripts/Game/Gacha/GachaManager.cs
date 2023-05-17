@@ -108,9 +108,14 @@ public class GachaManager : MonoBehaviour {
             resultText.text = itemWon.nameCard;
             resultImage.sprite = itemWon.sprite;
             resultImage.preserveAspect = true;
-    
-            // Add the item to the user's inventory
 
+            if (PlayerPrefs.GetInt(itemWon.nameCard) == 0) 
+            {
+                PlayerPrefs.SetInt(itemWon.nameCard, 1);
+                PlayerPrefs.Save();
+
+                Debug.Log("New character unlocked !");
+            }
             DisableButton();
             DisappearBalanceText();
 
