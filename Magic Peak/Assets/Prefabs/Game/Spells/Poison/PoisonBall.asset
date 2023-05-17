@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
-  m_Name: WaterBlast
+  m_Name: PoisonBall
   m_EditorClassIdentifier: 
-  Name: Water Blast
+  Name: Poison Ball
   cooldownTime: 2
   activeTime: 0
   damage: 10
@@ -22,6 +22,6 @@ MonoBehaviour:
   heal: 0
   chargeTime: 0
   castOffset: 0
-  rotationOffset: -90
+  rotationOffset: 90
   abilityClass: 0
-  prefab: {fileID: 6390410684125155207, guid: ec58ecd3cba905e42955a3af93e3cea4, type: 3}
+  prefab: {fileID: 1844076436104656073, guid: 35753442037a7d4499a4cb520deab000, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
   m_Name: IceDrops
   m_EditorClassIdentifier: 
-  Name: IceDrops
+  Name: Ice Drops
   cooldownTime: 8
   activeTime: 1.13
   damage: 60
@@ -22,5 +22,6 @@ MonoBehaviour:
   heal: 0
   chargeTime: 0.4
   castOffset: 1.5
+  rotationOffset: 0
   abilityClass: 1
   prefab: {fileID: 6509577059273816882, guid: 2b7686e28fa40b240971c63f7ed24ea4, type: 3}
