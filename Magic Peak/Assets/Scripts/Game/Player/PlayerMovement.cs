@@ -68,14 +68,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isCastingSpell)
         {
             PlayerOrientation();
-            // if (Physics2D.OverlapCircle(this.transform.position, .2f, ice))
-            // {
-            //     MovePlayerOnIce();
-            // }
-            // else
-            // {
             MovePlayer();
-            // }
             PlayerIsMovingAnimation();
             PlayerSpellCast();
         }
