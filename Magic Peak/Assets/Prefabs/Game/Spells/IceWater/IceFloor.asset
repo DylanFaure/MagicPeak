@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
-  m_Name: Fireball
+  m_Name: IceFloor
   m_EditorClassIdentifier: 
-  Name: Fireball
-  cooldownTime: 2
-  activeTime: 0
-  damage: 10
-  range: 800
-  speed: 400
+  Name: Ice Floor
+  cooldownTime: 5
+  activeTime: 0.63
+  damage: 35
+  range: 7
+  speed: 0
   shield: 0
   heal: 0
   chargeTime: 0
   castOffset: 0
-  rotationOffset: 90
-  abilityClass: 0
-  prefab: {fileID: 3466100806538052445, guid: 0c0127701bcc9c540b232be7f77120fe, type: 3}
+  abilityClass: 1
+  prefab: {fileID: 641676106562818238, guid: e663c7aa2dcf8c24b8fa5c8c85d2184f, type: 3}

@@ -15,6 +15,7 @@ public class Ability : ScriptableObject
     public float heal;
     public float chargeTime;
     public float castOffset;
+    public float rotationOffset;
     public AbilityClass abilityClass;
     public GameObject prefab;
 
@@ -48,6 +49,7 @@ public class Ability : ScriptableObject
         projectile.GetComponent<ProjectileSpell>().damage = damage;
         projectile.GetComponent<ProjectileSpell>().range = range;
         projectile.GetComponent<ProjectileSpell>().speed = speed;
+        projectile.GetComponent<ProjectileSpell>().rotationOffset = rotationOffset;
         projectile.GetComponent<ProjectileSpell>().SetTarget(mousePos);
         return true;
     }
