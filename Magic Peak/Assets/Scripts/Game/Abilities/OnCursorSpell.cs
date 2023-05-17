@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class OnCursorSpell : MonoBehaviour
 {
-    public float damage;
-    public float range;
-    public float activeTime;
-    public float chargeTime;
-    public Vector3 target;
     private Collider2D col;
+
+    [HideInInspector] public float damage;
+    [HideInInspector] public float range;
+    [HideInInspector] public float activeTime;
+    [HideInInspector] public float chargeTime;
+    [HideInInspector] public Vector3 target;
 
     private void Awake()
     {
@@ -35,7 +36,6 @@ public class OnCursorSpell : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
-            Destroy(gameObject);
         }
     }
 

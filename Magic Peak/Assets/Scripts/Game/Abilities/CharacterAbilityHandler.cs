@@ -45,7 +45,6 @@ public class AbilityContainer
 public class CharacterAbilityHandler : MonoBehaviour
 {
     [SerializeField] Ability startingAbility;
-    [SerializeField] GameObject[] abilityPrefabs;
 
     private List<AbilityContainer> abilities;
 
@@ -94,52 +93,11 @@ public class CharacterAbilityHandler : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
         ability.Cooldown();
-        switch (ability.ability.abilityClass)
-        {
-            case Ability.AbilityClass.Projectile:
-                ActivateProjectileSpell(ability, mousePos);
-                break;
-            case Ability.AbilityClass.Oncursor:
-                ActivateOnCursorSpell(ability, mousePos);
-                break;
-            case Ability.AbilityClass.Selfcast:
-                GameObject selfcast = Instantiate(ability.ability.prefab, transform.position, Quaternion.identity);
-                break;
-            default:
-                break;
-        }
+        ability.ability.Activate(gameObject, mousePos);
     }
-
     public void ActivateAbility(int abilityIndex)
     {
         AbilityContainer ability = abilities[abilityIndex];
         ActivateAbility(ability);
-    }
-
-    private void ActivateProjectileSpell(AbilityContainer ability, Vector3 mousePos)
-    {
-        GameObject projectile = Instantiate(ability.ability.prefab, transform.position, Quaternion.identity);
-        projectile.GetComponent<ProjectileSpell>().damage = ability.ability.damage;
-        projectile.GetComponent<ProjectileSpell>().speed = ability.ability.speed;
-        projectile.GetComponent<ProjectileSpell>().range = ability.ability.range;
-        projectile.GetComponent<ProjectileSpell>().SetTarget(mousePos);
-    }
-
-    private void ActivateOnCursorSpell(AbilityContainer ability, Vector3 mousePos)
-    {
-        // check if mousePos is in ability range
-        if (Vector3.Distance(transform.position, mousePos) > ability.ability.range)
-        {
-            Debug.Log("Target out of range");
-            return;
-        }
-
-        Debug.Log("Target in range");
-        GameObject oncursor = Instantiate(ability.ability.prefab, mousePos, Quaternion.identity);
-        oncursor.GetComponent<OnCursorSpell>().damage = ability.ability.damage;
-        oncursor.GetComponent<OnCursorSpell>().range = ability.ability.range;
-        oncursor.GetComponent<OnCursorSpell>().chargeTime = ability.ability.chargeTime;
-        oncursor.GetComponent<OnCursorSpell>().activeTime = ability.ability.activeTime;
-        oncursor.GetComponent<OnCursorSpell>().SetTarget(mousePos);
     }
 }

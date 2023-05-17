@@ -5,10 +5,11 @@ using UnityEngine;
 public class ProjectileSpell : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed;
-    public float damage;
-    public float range;
-    public Vector3 direction;
+
+    [HideInInspector] public float speed;
+    [HideInInspector] public float damage;
+    [HideInInspector] public float range;
+    [HideInInspector] public Vector3 direction;
 
     void Awake()
     {
