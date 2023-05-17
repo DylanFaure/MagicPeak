@@ -2,34 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnCursorSpell : MonoBehaviour
+public class LaserSpell : MonoBehaviour
 {
     private Collider2D col;
 
     [HideInInspector] public float damage;
-    [HideInInspector] public float range;
     [HideInInspector] public float chargeTime;
-    [HideInInspector] public Vector3 target;
-    [HideInInspector] public float castOffset;
-
     [HideInInspector] public float activeTime;
+    [HideInInspector] public float range;
+    [HideInInspector] public Vector3 direction;
+
     private float timer;
-    private bool isCharging = false;
 
     private void Awake()
     {
         col = GetComponent<Collider2D>();
-        transform.position = target;
+        if (chargeTime > 0f)
+        {
+            col.enabled = false;
+            Invoke("EnableCollider", chargeTime);
+        }
     }
 
     private void Update()
     {
-        if (chargeTime > 0 && !isCharging)
-        {
-            isCharging = true;
-            Invoke("EnableCollider", chargeTime);
-        }
-
         timer += Time.deltaTime;
         if (timer >= activeTime)
         {
@@ -39,18 +35,13 @@ public class OnCursorSpell : MonoBehaviour
 
     public void SetTarget(Vector3 mousePos)
     {
-        target = mousePos - transform.position;
+        direction = mousePos - transform.position;
 
-        transform.position = mousePos;
-        if (castOffset > 0f)
-        {
-            transform.position += transform.up * castOffset;
-        }
-    }
+        float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
 
-    private void EnableCollider()
-    {
-        col.enabled = true;
+        // laser sprite pivot is at the center, so we need to move it to the end of the laser sprite
+        transform.position += direction.normalized * range / 2f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,5 +50,10 @@ public class OnCursorSpell : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
         }
+    }
+
+    private void EnableCollider()
+    {
+        col.enabled = true;
     }
 }

@@ -5,9 +5,15 @@ using UnityEngine;
 public class SelfcastSpell : MonoBehaviour
 {
     [HideInInspector] public float activeTime;
+    
+    private float timer;
 
-    private void Awake()
+    private void Update()
     {
-        Destroy(gameObject, activeTime);
+        timer += Time.deltaTime;
+        if (timer >= activeTime)
+        {
+            Destroy(gameObject);
+        }
     }
 }

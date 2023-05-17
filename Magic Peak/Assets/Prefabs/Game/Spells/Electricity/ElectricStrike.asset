@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
-  m_Name: Fireslowblast
+  m_Name: ElectricStrike
   m_EditorClassIdentifier: 
-  Name: Fireslowblast
-  cooldownTime: 6
-  activeTime: 1.05
-  damage: 50
-  range: 8
+  Name: Electric Strike
+  cooldownTime: 4
+  activeTime: 0.87
+  damage: 30
+  range: 7
   speed: 0
   shield: 0
   heal: 0
-  chargeTime: 0.6
+  chargeTime: 0.1
+  castOffset: 1.2
   abilityClass: 1
-  prefab: {fileID: 6648211185439405731, guid: 5a6b9f5aef6fb504da5bc6e3b096416e, type: 3}
+  prefab: {fileID: 827492966841811473, guid: 28b56ec3c5e4f054aa2bee3ee431d524, type: 3}
