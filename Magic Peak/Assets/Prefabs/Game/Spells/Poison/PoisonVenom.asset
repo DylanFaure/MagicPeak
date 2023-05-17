@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
-  m_Name: Fireslowblast
+  m_Name: PoisonVenom
   m_EditorClassIdentifier: 
-  Name: Fireslowblast
-  cooldownTime: 6
-  activeTime: 1.05
-  damage: 50
-  range: 8
+  Name: Poison Venom
+  cooldownTime: 15
+  activeTime: 8
+  damage: 5
+  range: 7
   speed: 0
   shield: 0
   heal: 0
-  chargeTime: 0.6
+  chargeTime: 0
+  castOffset: 0
+  rotationOffset: 0
   abilityClass: 1
-  prefab: {fileID: 6648211185439405731, guid: 5a6b9f5aef6fb504da5bc6e3b096416e, type: 3}
+  prefab: {fileID: 5555596264103684157, guid: 51dd62b1c4a6a7d418a527038c933de5, type: 3}

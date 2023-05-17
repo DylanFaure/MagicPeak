@@ -77,7 +77,9 @@ public class CharacterAbilityHandler : MonoBehaviour
         Debug.Log("Ability activated");
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0f;
-        ability.ability.Activate(gameObject, mousePos);
-        ability.Cooldown();
+        if (ability.ability.Activate(gameObject, mousePos))
+        {
+            ability.Cooldown();
+        }
     }
 }

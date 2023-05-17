@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
-  m_Name: Fireball
+  m_Name: PoisonBlast
   m_EditorClassIdentifier: 
-  Name: Fireball
-  cooldownTime: 2
-  activeTime: 0
-  damage: 10
-  range: 25
-  speed: 400
+  Name: Poison Blast
+  cooldownTime: 3.5
+  activeTime: 0.9
+  damage: 20
+  range: 8
+  speed: 0
   shield: 0
   heal: 0
   chargeTime: 0
-  abilityClass: 0
-  prefab: {fileID: 3466100806538052445, guid: 0c0127701bcc9c540b232be7f77120fe, type: 3}
+  castOffset: 0
+  rotationOffset: 0
+  abilityClass: 1
+  prefab: {fileID: 4207275325750700590, guid: 80bff0a5d2b0e724da6a2bf869be65e5, type: 3}
