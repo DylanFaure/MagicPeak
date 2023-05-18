@@ -24,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        healthBar = this.transform.Find("Health").Find("Health Bar").GetComponent<HealthBar>();
+        playerStats = player.GetComponent<PlayerStats>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
