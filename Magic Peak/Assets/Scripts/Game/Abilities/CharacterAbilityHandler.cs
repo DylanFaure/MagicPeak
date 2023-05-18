@@ -56,7 +56,7 @@ public class CharacterAbilityHandler : MonoBehaviour
     {
         ProcessCooldowns();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             ActivateAbility(currentAbility);
         }
