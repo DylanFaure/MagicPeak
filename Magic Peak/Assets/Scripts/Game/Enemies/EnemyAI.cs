@@ -96,6 +96,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            // A chqnger pqr le gqin d'xp de chaque monstre
+            playerStats.GainXp(30);
             Destroy(gameObject);
         }
     }

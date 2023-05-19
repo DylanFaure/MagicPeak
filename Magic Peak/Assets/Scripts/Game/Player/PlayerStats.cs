@@ -28,6 +28,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        GetSavedUserStat();
     }
 
     void Update()
@@ -62,6 +63,11 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void GainXp(float gainedXp)
+    {
+        experience += gainedXp;
+    }
+
     public float GetAttackPlayer()
     {
         return attackDamage;
@@ -73,6 +79,19 @@ public class PlayerStats : MonoBehaviour
         {
             TakeDamage(20);
         }
+    }
+
+    // Save user data (health and level) after a map
+    private void SaveUserStat()
+    {
+        PlayerPrefs.SetFloat("currentHealth", currentHealth);
+        PlayerPrefs.SetFloat("level", level);
+    }
+
+    private void GetSavedUserStat()
+    {
+        currentHealth = PlayerPrefs.GetFloat("currentHealth");
+        level = PlayerPrefs.GetFloat("level");
     }
 
     private void DisplayHealth()
