@@ -62,13 +62,13 @@ public class CharacterAbilityHandler : MonoBehaviour
         CheckCurrentMage();
         ProcessCooldowns();
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             ActivateAbility(abilities[0]);
-        } else if (Input.GetKeyDown(KeyCode.R))
+        } else if (Input.GetKeyDown(KeyCode.E) && currentMage.characterRarity >= 4)
         {
             ActivateAbility(abilities[1]);
-        } else if (Input.GetKeyDown(KeyCode.T))
+        } else if (Input.GetKeyDown(KeyCode.R) && currentMage.characterRarity >= 5)
         {
             ActivateAbility(abilities[2]);
         }
