@@ -44,27 +44,55 @@ public class AbilityContainer
 
 public class CharacterAbilityHandler : MonoBehaviour
 {
-    [SerializeField] Ability startingAbility;
-    private AbilityContainer currentAbility;
+    [SerializeField] private PeakMage currentMage;
 
-    private void Start()
+    private List<AbilityContainer> abilities = new List<AbilityContainer>();
+
+    private void Awake()
     {
-        currentAbility = new AbilityContainer(startingAbility);
+        for (int i = 0; i < currentMage.abilities.Count; i++)
+        {
+            abilities.Add(new AbilityContainer(currentMage.abilities[i]));
+        }
+        currentMage.isNew = false;
     }
 
     private void Update()
     {
+        CheckCurrentMage();
         ProcessCooldowns();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ActivateAbility(currentAbility);
+            ActivateAbility(abilities[0]);
+        } else if (Input.GetKeyDown(KeyCode.R))
+        {
+            ActivateAbility(abilities[1]);
+        } else if (Input.GetKeyDown(KeyCode.T))
+        {
+            ActivateAbility(abilities[2]);
+        }
+    }
+
+    private void CheckCurrentMage()
+    {
+        if (currentMage.isNew)
+        {
+            abilities.Clear();
+            for (int i = 0; i < currentMage.abilities.Count; i++)
+            {
+                abilities.Add(new AbilityContainer(currentMage.abilities[i]));
+            }
+            currentMage.isNew = false;
         }
     }
 
     private void ProcessCooldowns()
     {
-        currentAbility.ReduceCooldown(Time.deltaTime);
+        for (int i = 0; i < abilities.Count; i++)
+        {
+            abilities[i].ReduceCooldown(Time.deltaTime);
+        }
     }
 
     public void ActivateAbility(AbilityContainer ability)
