@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float currentHealth = 0;
+    [SerializeField] private float currentHealth = 100;
 
     [Header("Stats")]
     [SerializeField] private float attackDamage = 15f;
@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        PlayerPrefs.SetFloat("currentHealth", currentHealth);
         healthBar.SetMaxHealth(maxHealth);
         GetSavedUserStat();
     }
