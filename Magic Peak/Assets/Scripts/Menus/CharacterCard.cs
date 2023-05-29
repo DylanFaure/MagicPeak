@@ -9,8 +9,6 @@ public class CharacterCard : MonoBehaviour
     [SerializeField] private Image characterImage;
     [SerializeField] private TextMeshProUGUI characterName;
     [SerializeField] private PeakMage currentMage;
-    [SerializeField] private int characterRarity;
-    [SerializeField] private string characterType;
 
     void Awake()
     {
@@ -41,6 +39,6 @@ public class CharacterCard : MonoBehaviour
         }
         PlayerPrefs.SetString("CharacterSelected", gameObject.name);
         PlayerPrefs.Save();
-        currentMage.ChangeCharacter(gameObject.name, characterRarity, characterType);
+        currentMage.ChangeCharacter(gameObject.name);
     }
 }
