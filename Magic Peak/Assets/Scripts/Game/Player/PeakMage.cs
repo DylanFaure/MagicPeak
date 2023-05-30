@@ -13,6 +13,10 @@ public class PeakMage : ScriptableObject
 
     public void ChangeCharacter(string name)
     {
+        if (name == "Lodrès")
+        {
+            name = "Lodres";
+        }
         Debug.Log("Changing character to " + name);
         PeakMage newMage = Resources.Load<PeakMage>("Characters/" + name + "/" + name);
         characterName = newMage.characterName;
