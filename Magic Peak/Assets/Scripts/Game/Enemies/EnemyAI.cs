@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -21,8 +22,12 @@ public class EnemyAI : MonoBehaviour
     private Transform player;
     private bool isChasing = false;
 
+    private NavMeshAgent agent;
+
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed = moveSpeed;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         healthBar = this.transform.Find("Health").Find("Health Bar").GetComponent<HealthBar>();
         playerStats = player.GetComponent<PlayerStats>();
@@ -76,7 +81,8 @@ public class EnemyAI : MonoBehaviour
             else
             {
                 // Move the enemy to chase the player
-                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                // transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                agent.SetDestination(player.position);
             }
         }
     }
