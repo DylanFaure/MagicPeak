@@ -327,13 +327,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   attackDamage: 15
   level: 1
   experience: 0
   experienceNeeded: 100
   healthBar: {fileID: 839236011}
-  changeScene: Start
+  changeScene: Spells Test
   healthText: {fileID: 292438655}
   levelText: {fileID: 528271027}
 --- !u!114 &48501436

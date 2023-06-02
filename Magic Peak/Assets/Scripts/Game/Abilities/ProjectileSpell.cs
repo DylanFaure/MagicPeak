@@ -43,6 +43,9 @@ public class ProjectileSpell : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
             Destroy(gameObject);
+        } else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
         }
     }
 }

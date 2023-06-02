@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
+  m_Name: Firedome
+  m_EditorClassIdentifier: 
+  Name: Firedome
+  cooldownTime: 6
+  activeTime: 0.96
+  damage: 50
+  range: 8
+  speed: 0
+  shield: 0
+  heal: 0
+  chargeTime: 0.25
+  abilityClass: 1
+  prefab: {fileID: 5676685028779978914, guid: fb62f093412e8664a81cbd903471b2d6, type: 3}

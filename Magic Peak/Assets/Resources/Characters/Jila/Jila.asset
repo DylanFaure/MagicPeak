@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed52968eb8c7894db36bc9f58c8fbc9, type: 3}
+  m_Name: Jila
+  m_EditorClassIdentifier: 
+  characterName: Jila
+  characterRarity: 4
+  characterType: IceWater
+  abilities:
+  - {fileID: 11400000, guid: aff14983a7a8981419e1be0c29b1bd32, type: 2}
+  - {fileID: 11400000, guid: 9b1b5775fb502874d8c6a2bf87e9a24b, type: 2}
+  isNew: 1

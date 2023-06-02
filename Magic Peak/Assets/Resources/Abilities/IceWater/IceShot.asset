@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47baf7ce2eee5be42b02d57df140b4d7, type: 3}
+  m_Name: IceShot
+  m_EditorClassIdentifier: 
+  Name: Ice Shot
+  cooldownTime: 2
+  activeTime: 0
+  damage: 10
+  range: 800
+  speed: 400
+  shield: 0
+  heal: 0
+  chargeTime: 0
+  castOffset: 0
+  rotationOffset: -90
+  abilityClass: 0
+  prefab: {fileID: 6390410684125155207, guid: ec58ecd3cba905e42955a3af93e3cea4, type: 3}
