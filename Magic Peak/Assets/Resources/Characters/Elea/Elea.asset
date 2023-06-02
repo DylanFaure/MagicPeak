@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed52968eb8c7894db36bc9f58c8fbc9, type: 3}
+  m_Name: Elea
+  m_EditorClassIdentifier: 
+  characterName: Elea
+  characterRarity: 5
+  characterType: Fire
+  abilities:
+  - {fileID: 11400000, guid: 0ec25262e3962eb49b2f4486f91a4975, type: 2}
+  - {fileID: 11400000, guid: a10fbd4488978a04bbf5803f86aa0aeb, type: 2}
+  - {fileID: 11400000, guid: 447b8b09a5009764fbc5c1a5643d2f7d, type: 2}
+  isNew: 1
