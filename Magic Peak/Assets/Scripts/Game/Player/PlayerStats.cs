@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private Xp xpBar;
     [SerializeField] private string changeScene;
 
     [Header("Texts")]
@@ -36,6 +37,7 @@ public class PlayerStats : MonoBehaviour
     {
         DestroyPlayer();
         DisplayHealth();
+        DisplayXp();
         DisplayLevel();
         if (experience >= experienceNeeded)
         {
@@ -44,6 +46,8 @@ public class PlayerStats : MonoBehaviour
             experienceNeeded = Mathf.RoundToInt(experienceNeeded * 1.5f);
             maxHealth += 10;
             HealPlayer(maxHealth);
+            xpBar.SetXp(0);
+            xpBar.SetMaxXp(experienceNeeded);
             attackDamage += 5;
         }
     }
@@ -98,6 +102,11 @@ public class PlayerStats : MonoBehaviour
     private void DisplayHealth()
     {
         healthText.text = currentHealth + "/" + maxHealth;
+    }
+
+    private void DisplayXp()
+    {
+        xpBar.SetXp(experience);
     }
 
     private void DisplayLevel()
