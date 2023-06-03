@@ -25,31 +25,28 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI levelText;
 
+    private bool updateStatsEnemy = false;
+    private bool isDead = false;
+
     void Start()
     {
-        currentHealth = maxHealth;
-        PlayerPrefs.SetFloat("currentHealth", currentHealth);
-        healthBar.SetMaxHealth(maxHealth);
         GetSavedUserStat();
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
+        xpBar.SetMaxXp(experienceNeeded);
+        DisplayHealth();
+        DisplayXp();
+        DisplayLevel();
     }
 
     void Update()
     {
-        DestroyPlayer();
+        UpdateStatsPlayer();
+        KillPlayer();
         DisplayHealth();
         DisplayXp();
         DisplayLevel();
-        if (experience >= experienceNeeded)
-        {
-            level++;
-            experience -= experienceNeeded;
-            experienceNeeded = Mathf.RoundToInt(experienceNeeded * 1.5f);
-            maxHealth += 10;
-            HealPlayer(maxHealth);
-            xpBar.SetXp(0);
-            xpBar.SetMaxXp(experienceNeeded);
-            attackDamage += 5;
-        }
+        SaveUserStat();
     }
 
     public void TakeDamage(float damage)
@@ -78,25 +75,78 @@ public class PlayerStats : MonoBehaviour
         return attackDamage;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public bool AbleToUpdateStatsEnemy()
     {
-        if (collision.CompareTag("EnemyAttack"))
+        return updateStatsEnemy;
+    }
+
+    private void ResetToBaseStatPlayer()
+    {
+        maxHealth = 100;
+        currentHealth = 100;
+        attackDamage = 15f;
+        level = 1;
+        experience = 0;
+        experienceNeeded = 100;
+    }
+
+    private void ResetStatsPlayer()
+    {
+        currentHealth = maxHealth;
+        SaveUserStat();
+    }
+
+    private void UpdateStatsPlayer()
+    {
+        if (experience >= experienceNeeded)
         {
-            TakeDamage(20);
+            updateStatsEnemy = true;
+            level++;
+            experience -= experienceNeeded;
+            experienceNeeded = Mathf.RoundToInt(experienceNeeded * 1.5f);
+            maxHealth += 10;
+            HealPlayer(maxHealth);
+            xpBar.SetXp(0);
+            xpBar.SetMaxXp(experienceNeeded);
+            attackDamage += 5;
+        }
+        else
+        {
+            updateStatsEnemy = false;
         }
     }
 
-    // Save user data (health and level) after a map
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            var enemy = collision.GetComponent<EnemyAI>();
+            Debug.Log(enemy);
+            if (enemy != null)
+            {
+                TakeDamage(enemy.GetAttackDamageEnemy());
+            }
+        }
+    }
+
     private void SaveUserStat()
     {
         PlayerPrefs.SetFloat("currentHealth", currentHealth);
+        PlayerPrefs.SetFloat("maxHealth", maxHealth);
         PlayerPrefs.SetFloat("level", level);
+        PlayerPrefs.SetFloat("experience", experience);
+        PlayerPrefs.SetFloat("experienceNeeded", experienceNeeded);
+        PlayerPrefs.SetFloat("attackDamage", attackDamage);
     }
 
     private void GetSavedUserStat()
     {
         currentHealth = PlayerPrefs.GetFloat("currentHealth");
+        maxHealth = PlayerPrefs.GetFloat("maxHealth");
         level = PlayerPrefs.GetFloat("level");
+        experience = PlayerPrefs.GetFloat("experience");
+        experienceNeeded = PlayerPrefs.GetFloat("experienceNeeded");
+        attackDamage = PlayerPrefs.GetFloat("attackDamage");
     }
 
     private void DisplayHealth()
@@ -114,11 +164,12 @@ public class PlayerStats : MonoBehaviour
         levelText.text = level.ToString();
     }
 
-    private void DestroyPlayer()
+    private void KillPlayer()
     {
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !isDead)
         {
-            Destroy(gameObject);
+            isDead = true;
+            ResetStatsPlayer();
             SceneManager.LoadScene(changeScene);
         }
     }

@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackTimer = 0f;
     [SerializeField] private float visionRange = 10f;
+    [SerializeField] private float xpGiven = 30f;
     
     [Header("Settings")]
     [SerializeField] private HealthBar healthBar;
@@ -37,13 +38,27 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        UpgradeStatEnemy();
         ChasePlayer();
         DestroyEnemy();
     }
 
+    public float GetAttackDamageEnemy()
+    {
+        return attackDamage;
+    }
+
+    private void UpgradeStatEnemy()
+    {
+        if (playerStats.AbleToUpdateStatsEnemy())
+        {
+            maxHealth += 10;
+            attackDamage += 5;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if enemy has been attacked by player. If yes, lose hp.
         if (collision.CompareTag("Player"))
         {
             TakeDamage(playerStats.GetAttackPlayer());
@@ -63,10 +78,8 @@ public class EnemyAI : MonoBehaviour
 
         if (isChasing)
         {
-            // Check if player is in attack range
             if (distanceToPlayer <= attackRange)
             {
-                // Timer for attacks at every desired time
                 if (attackTimer <= 0f)
                 {
                     Attack();
@@ -74,14 +87,11 @@ public class EnemyAI : MonoBehaviour
                 }
                 else
                 {
-                    // Reset the attack timer
                     attackTimer -= Time.deltaTime;
                 }
             }
             else
             {
-                // Move the enemy to chase the player
-                // transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
                 agent.SetDestination(player.position);
             }
         }
@@ -102,8 +112,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            // A chqnger pqr le gqin d'xp de chaque monstre
-            playerStats.GainXp(30);
+            playerStats.GainXp(xpGiven);
             Destroy(gameObject);
         }
     }
