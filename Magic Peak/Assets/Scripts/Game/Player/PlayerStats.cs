@@ -19,11 +19,13 @@ public class PlayerStats : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private Xp xpBar;
+    [SerializeField] private WalletManager walletManager;
     [SerializeField] private string changeScene;
 
     [Header("Texts")]
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI moneyText;
 
     private bool updateStatsEnemy = false;
     private bool isDead = false;
@@ -36,6 +38,7 @@ public class PlayerStats : MonoBehaviour
         xpBar.SetMaxXp(experienceNeeded);
         DisplayHealth();
         DisplayXp();
+        DisplayMoney();
         DisplayLevel();
     }
 
@@ -45,6 +48,7 @@ public class PlayerStats : MonoBehaviour
         KillPlayer();
         DisplayHealth();
         DisplayXp();
+        DisplayMoney();
         DisplayLevel();
         SaveUserStat();
     }
@@ -68,6 +72,11 @@ public class PlayerStats : MonoBehaviour
     public void GainXp(float gainedXp)
     {
         experience += gainedXp;
+    }
+
+    public void GainMoney(int money)
+    {
+        walletManager.AddCurrency(money);
     }
 
     public float GetAttackPlayer()
@@ -157,6 +166,11 @@ public class PlayerStats : MonoBehaviour
     private void DisplayXp()
     {
         xpBar.SetXp(experience);
+    }
+
+    private void DisplayMoney()
+    {
+        moneyText.text = "$" + walletManager.GetWalletData().ToString();
     }
 
     private void DisplayLevel()

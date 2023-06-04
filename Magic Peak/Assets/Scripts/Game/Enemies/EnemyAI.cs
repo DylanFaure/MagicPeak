@@ -15,6 +15,7 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float attackTimer = 0f;
     [SerializeField] private float visionRange = 10f;
     [SerializeField] private float xpGiven = 30f;
+    [SerializeField] private int moneyGiven = 30;
     
     [Header("Settings")]
     [SerializeField] private HealthBar healthBar;
@@ -113,6 +114,7 @@ public class EnemyAI : MonoBehaviour
         if (currentHealth <= 0)
         {
             playerStats.GainXp(xpGiven);
+            playerStats.GainMoney(moneyGiven);
             Destroy(gameObject);
         }
     }

@@ -19,14 +19,6 @@ public class WalletManager : MonoBehaviour
             instance = this;
             Debug.Log("Wallet instanced !");
         }
-        else
-        {
-            Destroy(gameObject);
-            Debug.Log("Wallet destroyed !");
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     public void AddCurrency(int amount)
