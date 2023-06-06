@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -214468999
+  m_SortingLayerID: -83635295
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -49266856252912819, guid: 025ee44033f41465997c496215474c5a, type: 3}
@@ -146,6 +146,7 @@ MonoBehaviour:
   speed: 400
   damage: 10
   range: 25
+  rotationOffset: 0
   direction: {x: -0.7869873, y: 7.7472725, z: 0}
 --- !u!58 &3986989885640482842
 CircleCollider2D:
@@ -234,7 +235,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -214468999
+  m_SortingLayerID: -83635295
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3605835103500832990, guid: 67d4ee24701e743e0a5c869246449bde, type: 3}
