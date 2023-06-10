@@ -1,3 +1,4 @@
+using System.Net;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -67,6 +68,9 @@ public class PlayerInteraction : MonoBehaviour
             else if (hit.collider.CompareTag("CharacterSelection"))
             {
                 characterSelectionCanvas.SetActive(true);
+            }
+            else if (hit.collider.CompareTag("PNJ"))
+            {
             }
         }
     }
