@@ -231,25 +231,25 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
             return;
 
-        // TEMPORAIRE -- TESTS
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            animator.SetBool("spellCast1", true);
-            isCastingSpell = true;
-            StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
-        }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            animator.SetBool("spellCast2", true);
-            isCastingSpell = true;
-            StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            animator.SetBool("death", true);
-            isCastingSpell = true;
-            StartCoroutine(SetAnimationWithTime("death", 4f));
-        }
+        // // TEMPORAIRE -- TESTS
+        // if (Input.GetKeyDown(KeyCode.E))
+        // {
+        //     animator.SetBool("spellCast1", true);
+        //     isCastingSpell = true;
+        //     StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
+        // }
+        // else if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     animator.SetBool("spellCast2", true);
+        //     isCastingSpell = true;
+        //     StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
+        // }
+        // else if (Input.GetKeyDown(KeyCode.T))
+        // {
+        //     animator.SetBool("death", true);
+        //     isCastingSpell = true;
+        //     StartCoroutine(SetAnimationWithTime("death", 4f));
+        // }
     }
 
     IEnumerator SetAnimationWithTime(string spellName, float spellTime)
