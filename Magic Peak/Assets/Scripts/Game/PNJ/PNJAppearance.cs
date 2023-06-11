@@ -3,12 +3,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Linq;
 
 // -----------------------------------------------------------------------------------------
 // player movement class
 public class PNJAppearance : MonoBehaviour
 {
+    // enum for the player orientation
+    public enum Direction
+    {
+        Top = 0,
+        Bottom = 4,
+        Left = 2,
+        Right = 6
+    }
+
     // static public members
     public static PNJAppearance instance;
 
@@ -20,6 +30,11 @@ public class PNJAppearance : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public BoxCollider2D boxCollider;
     public string PnjSpriteSheetName;
+    public List<string> PnjDialogue;
+    public bool randomRotation;
+    public bool isInteracting;
+    public Direction startingDirection;
+    
 
     // -----------------------------------------------------------------------------------------
     // private members
@@ -39,7 +54,7 @@ public class PNJAppearance : MonoBehaviour
         previousPosition = tf.position;
         //velocity = rb.velocity;
         this.LoadSpriteSheet();
-        animator.SetInteger("orientation", 4);
+        SetStartingDirection();
     }
 
     // -----------------------------------------------------------------------------------------
@@ -55,6 +70,11 @@ public class PNJAppearance : MonoBehaviour
         {
             this.spriteRenderer.enabled = true;
             this.boxCollider.enabled = true;
+        }
+
+        if (randomRotation && !isInteracting)
+        {
+            StartCoroutine(RotatePnjWithCooldown());
         }
     }
 
@@ -102,5 +122,40 @@ public class PNJAppearance : MonoBehaviour
 
         // Remember the name of the sprite sheet in case it is changed later
         this.LoadedSpriteSheetName = PlayerPrefs.GetString("CharacterSelected");
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // Rotate the pnj randomly
+    IEnumerator RotatePnjWithCooldown()
+    {
+        randomRotation = false;
+        int randomOrientation = Random.Range(0, 4) * 2;
+        animator.SetInteger("orientation", randomOrientation);
+        yield return new WaitForSeconds(Random.Range(1, 8));
+        randomRotation = true;
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // Set the starting direction of the pnj
+    public void SetStartingDirection()
+    {
+        switch (startingDirection)
+        {
+            case Direction.Top:
+                animator.SetInteger("orientation", 0);
+                break;
+            case Direction.Bottom:
+                animator.SetInteger("orientation", 4);
+                break;
+            case Direction.Left:
+                animator.SetInteger("orientation", 2);
+                break;
+            case Direction.Right:
+                animator.SetInteger("orientation", 6);
+                break;
+            default:
+                animator.SetInteger("orientation", 4);
+                break;
+        }
     }
 }

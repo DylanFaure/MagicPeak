@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -13,11 +14,21 @@ public class PlayerInteraction : MonoBehaviour
     public LayerMask interactionLayer;
     public GameObject interactionCanvas;
     public GameObject characterSelectionCanvas;
+    public GameObject pnjDialogueCanvas;
+    public TextMeshProUGUI pnjDialogueText;
+
+    // -----------------------------------------------------------------------------------------
+    // private members
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private List<string> pnjDialogueList;
+    private bool isInteracting;
+    private int dialogueIndex;
 
     void Awake()
     {
         interactionCanvas.SetActive(false);
         characterSelectionCanvas.SetActive(false);
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     // -----------------------------------------------------------------------------------------
@@ -33,7 +44,14 @@ public class PlayerInteraction : MonoBehaviour
         else if (animator.GetInteger("orientation") == 6)
             playerInteractionPoint.position = this.transform.position + new Vector3(0.5f, 0, 0);
 
-        CheckInteraction();
+        if (!isInteracting)
+        {
+            CheckInteraction();
+        }
+        else
+        {
+            Interact();
+        }
     }
 
     // -----------------------------------------------------------------------------------------
@@ -45,13 +63,21 @@ public class PlayerInteraction : MonoBehaviour
             interactionCanvas.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Interact();
+                isInteracting = true;
             }
         }
         else
         {
             interactionCanvas.SetActive(false);
         }
+    }
+
+    // -----------------------------------------------------------------------------------------
+    // Set the isInteracting value
+    public void StopInteracting()
+    {
+        isInteracting = false;
+        playerMovement.isTalkingToPnj = false;
     }
 
     // -----------------------------------------------------------------------------------------
@@ -68,9 +94,41 @@ public class PlayerInteraction : MonoBehaviour
             else if (hit.collider.CompareTag("CharacterSelection"))
             {
                 characterSelectionCanvas.SetActive(true);
+                playerMovement.isTalkingToPnj = true;
             }
             else if (hit.collider.CompareTag("PNJ"))
             {
+                if (playerMovement.isTalkingToPnj == false)
+                    pnjDialogueList = hit.collider.GetComponent<PNJAppearance>().PnjDialogue;
+                hit.collider.GetComponent<PNJAppearance>().isInteracting = true;
+                if (animator.GetInteger("orientation") == 0)
+                    hit.collider.GetComponent<PNJAppearance>().animator.SetInteger("orientation", 4);
+                else if (animator.GetInteger("orientation") == 4)
+                    hit.collider.GetComponent<PNJAppearance>().animator.SetInteger("orientation", 0);
+                else if (animator.GetInteger("orientation") == 2)
+                    hit.collider.GetComponent<PNJAppearance>().animator.SetInteger("orientation", 6);
+                else if (animator.GetInteger("orientation") == 6)
+                    hit.collider.GetComponent<PNJAppearance>().animator.SetInteger("orientation", 2);
+                playerMovement.isTalkingToPnj = true;
+                pnjDialogueText.text = pnjDialogueList[dialogueIndex];
+                pnjDialogueCanvas.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+                {
+                    dialogueIndex++;
+                    if (pnjDialogueList.Count == dialogueIndex)
+                    {
+                        hit.collider.GetComponent<PNJAppearance>().isInteracting = false;
+                        hit.collider.GetComponent<PNJAppearance>().SetStartingDirection();
+                        pnjDialogueCanvas.SetActive(false);
+                        playerMovement.isTalkingToPnj = false;
+                        isInteracting = false;
+                        dialogueIndex = 0;
+                    }
+                    else
+                    {
+                        pnjDialogueText.text = pnjDialogueList[dialogueIndex];
+                    }
+                }
             }
         }
     }
