@@ -9,11 +9,14 @@ public class CharacterCard : MonoBehaviour
     [SerializeField] private Image characterImage;
     [SerializeField] private TextMeshProUGUI characterName;
     [SerializeField] private PeakMage currentMage;
+    [SerializeField] private string characterDescription;
+    [SerializeField] private TextMeshProUGUI characterDescriptionText;
 
     void Awake()
     {
         characterImage = this.transform.Find("CharacterSprite").GetComponent<Image>();
         characterName = this.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+        characterDescriptionText = GameObject.Find("CharacterDescriptionText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -40,5 +43,6 @@ public class CharacterCard : MonoBehaviour
         PlayerPrefs.SetString("CharacterSelected", gameObject.name);
         PlayerPrefs.Save();
         currentMage.ChangeCharacter(gameObject.name);
+        characterDescriptionText.text = characterDescription;
     }
 }

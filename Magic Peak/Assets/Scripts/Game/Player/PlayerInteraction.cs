@@ -23,6 +23,7 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private List<string> pnjDialogueList;
     private bool isInteracting;
     private int dialogueIndex;
+    private bool isDialogueRandomize;
 
     void Awake()
     {
@@ -110,10 +111,25 @@ public class PlayerInteraction : MonoBehaviour
                 else if (animator.GetInteger("orientation") == 6)
                     hit.collider.GetComponent<PNJAppearance>().animator.SetInteger("orientation", 2);
                 playerMovement.isTalkingToPnj = true;
+                if (hit.collider.GetComponent<PNJAppearance>().isDialogueRandom && !isDialogueRandomize) {
+                    dialogueIndex = Random.Range(0, pnjDialogueList.Count);
+                    isDialogueRandomize = true;
+                }
+
                 pnjDialogueText.text = pnjDialogueList[dialogueIndex];
                 pnjDialogueCanvas.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
+                    if (hit.collider.GetComponent<PNJAppearance>().isDialogueRandom)
+                    {
+                        hit.collider.GetComponent<PNJAppearance>().isInteracting = false;
+                        hit.collider.GetComponent<PNJAppearance>().SetStartingDirection();
+                        pnjDialogueCanvas.SetActive(false);
+                        playerMovement.isTalkingToPnj = false;
+                        isInteracting = false;
+                        dialogueIndex = 0;
+                        isDialogueRandomize = false;
+                    }
                     dialogueIndex++;
                     if (pnjDialogueList.Count == dialogueIndex)
                     {
@@ -123,6 +139,7 @@ public class PlayerInteraction : MonoBehaviour
                         playerMovement.isTalkingToPnj = false;
                         isInteracting = false;
                         dialogueIndex = 0;
+                        isDialogueRandomize = false;
                     }
                     else
                     {

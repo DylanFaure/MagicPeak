@@ -500,7 +500,7 @@ RectTransform:
   - {fileID: 79523960}
   - {fileID: 1478285381}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -749,7 +749,7 @@ RectTransform:
   - {fileID: 1844167652}
   - {fileID: 951442374}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -924,11 +924,11 @@ RectTransform:
   m_Children:
   - {fileID: 154202264}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 564, y: 448}
+  m_AnchoredPosition: {x: 564, y: -443}
   m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &426328117
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed0a49aaa7664e9458b1a8a5887f9bcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4220e9bd3e10c454c8ccb887b7a8eba5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 10c15621237dc424694927d566c37732, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ecbb433e67163b548abc211689a24206, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: ecbb433e67163b548abc211689a24206, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1181,7 +1181,7 @@ RectTransform:
   - {fileID: 1002843151}
   - {fileID: 2025639124}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1222,7 +1222,7 @@ RectTransform:
   - {fileID: 603308877}
   - {fileID: 124609541}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1600,6 +1600,11 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Arsenic, a skilled alchemist, was once obsessed with the
+    secrets of poisons. He discovered dangerous formulas, transforming into a venomous
+    being. Now, he uses his knowledge to eradicate evil and punish the unjust with
+    his deadly poisons. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &603308876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2187,14 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Gally, a unique being born with a rare fusion of poison
+    and electric energies, originates from the enigmatic realm of Toxinflux. Their
+    body pulsates with a potent mixture of toxic venom and crackling electricity.
+    Gally embarks on a journey to understand their dual nature, wielding their venomous
+    and electric powers with precision. With their abilities, they seek to protect
+    the natural order and unleash a harmonious blend of deadly beauty and electrifying
+    force. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &757522660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2426,14 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Lyros, a mysterious figure with an unusual combination of
+    poison and ice powers, emerges from the frozen depths of Frostbane. Their touch
+    brings both deadly venom and icy chill, making them an enigmatic force to be
+    reckoned with. Lyros ventures through the realms, using their unique blend of
+    poison and ice to navigate treacherous landscapes and protect the vulnerable.
+    With each step, they leave behind a trail of frozen venom, marking their presence
+    in the annals of legend. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &823084489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,7 +3522,7 @@ RectTransform:
   - {fileID: 595503236}
   - {fileID: 1069732949}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3680,6 +3701,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Camage, a mysterious figure with an affinity for both fire
+    and electricity, emerges from the hidden realm of Ignisstorm. Born with the rare
+    ability to command two elemental forces, they strive to master their powers and
+    understand the intricate dance between flames and lightning. Camage embarks on
+    a quest to find balance within themselves, harnessing their dual abilities to
+    bring warmth, illumination, and electrifying energy to the world. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &1309122515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,7 +3739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1309122518
 MonoBehaviour:
@@ -3937,7 +3965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1333125156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3952,6 +3980,7 @@ RectTransform:
   m_Children:
   - {fileID: 880716185}
   - {fileID: 1996289839}
+  - {fileID: 6111286716601982177}
   - {fileID: 1235741179}
   - {fileID: 441848143}
   - {fileID: 1987516097}
@@ -6162,7 +6191,7 @@ RectTransform:
   - {fileID: 1366695075}
   - {fileID: 600304802}
   m_Father: {fileID: 1333125156}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8483,6 +8512,10 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Alec, a mighty ice mage, was once an ordinary villager.
+    Following a mystical encounter, he discovered his frozen powers. Now, he journeys
+    across the world, safeguarding the innocent and restoring harmony among the elements. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &1142930008012068557
 GameObject:
   m_ObjectHideFlags: 0
@@ -9010,6 +9043,83 @@ RectTransform:
   m_AnchoredPosition: {x: 29.999977, y: -77.39996}
   m_SizeDelta: {x: 54.724304, y: 11.520248}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1732691414317883613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6111286716601982177}
+  - component: {fileID: 98880396923767884}
+  - component: {fileID: 6680321135952065294}
+  m_Layer: 0
+  m_Name: BackgroundDescriptionCharacters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6111286716601982177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732691414317883613}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.075, y: 0.93373966, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6276815442421028133}
+  m_Father: {fileID: 1333125156}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 604, y: 2}
+  m_SizeDelta: {x: 601, y: 800}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &98880396923767884
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732691414317883613}
+  m_CullTransparentMesh: 1
+--- !u!114 &6680321135952065294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732691414317883613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8b169027e13165c44aec1f2a7b9cb63c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1755704529350723240
 GameObject:
   m_ObjectHideFlags: 0
@@ -10980,6 +11090,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Vega, a resilient soul from the frozen wastes of Frostholm,
+    possesses a deep connection to the power of ice. Trained in the art of cryomancy,
+    they can wield the freezing winds and icy blasts with precision. Vega journeys
+    through the frigid landscapes, using their frosty abilities to protect the vulnerable
+    and preserve the delicate harmony of the frozen realm. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360353246164381
 GameObject:
   m_ObjectHideFlags: 0
@@ -12216,6 +12332,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Saten, a mysterious traveler from the frost-covered lands
+    of Crystalia, is intertwined with the power of ice. Gifted with cryomancy, they
+    navigate the realms, leaving behind a trail of frozen wonders. Saten''s true
+    purpose remains shrouded in mystery, but their icy touch brings both beauty and
+    an icy chill to all they encounter on their enigmatic journey. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360353544234899
 GameObject:
   m_ObjectHideFlags: 0
@@ -12692,6 +12814,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Chap, an enigmatic wanderer from the electrifying realm
+    of Thunderstrike, harnesses the power of electricity. Born amidst thunderstorms,
+    they possess a unique affinity for manipulating electric currents. Chap journeys
+    through the realms, wielding their electrifying abilities to unravel ancient
+    mysteries and bring illumination to the darkest corners, sparking inspiration
+    and charging the world with energy. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360353678844912
 GameObject:
   m_ObjectHideFlags: 0
@@ -12940,6 +13069,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Jila, a determined wanderer from the realm of Frostwind,
+    commands the power of ice. Born amidst eternal blizzards, they were chosen by
+    the ancient Ice Spirits to become a master of cryomancy. Jila embarks on a solitary
+    quest, seeking to restore the balance between fire and ice, using their icy powers
+    to quell the raging flames that threaten to consume the world. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360353738636347
 GameObject:
   m_ObjectHideFlags: 0
@@ -14108,6 +14243,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Aries, a resilient soul from the frigid kingdom of Frostguard,
+    commands the elemental power of ice. Born with an icy heart, they honed their
+    cryomancy skills to perfection. Aries embarks on a journey to unlock the secrets
+    of their icy heritage, braving the frozen wilderness and using their frosty abilities
+    to protect their realm from impending peril. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354144518115
 GameObject:
   m_ObjectHideFlags: 0
@@ -14491,6 +14632,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Arianna, a gentle spirit hailing from the realm of Crystalglade,
+    is blessed with the power of ice. Born under the shimmering auroras, she embraces
+    her cryomancy abilities to create intricate ice sculptures that captivate all
+    who behold them. Arianna''s icy touch brings a sense of tranquility and wonder,
+    as she spreads the beauty and serenity of her frozen art across the realms. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354239950319
 GameObject:
   m_ObjectHideFlags: 0
@@ -14891,6 +15038,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Tiana, born in the icy realm of Glaciala, possesses an innate
+    connection to the power of ice. Growing up amidst snow-capped mountains, she
+    honed her skills in the art of cryomancy. Tiana embarks on a quest to protect
+    her homeland from the encroaching darkness, using her icy powers to freeze adversaries
+    and restore harmony to the frozen lands. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354393791309
 GameObject:
   m_ObjectHideFlags: 0
@@ -15198,6 +15351,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Jean, a resilient soul from the icy peaks of Glaciala, is
+    attuned to the power of ice. Growing up amidst the frost-kissed lands, they mastered
+    the art of cryomancy. Driven by a sense of duty, Jean ventures forth, using their
+    icy abilities to protect the vulnerable and restore harmony in a world plagued
+    by turmoil. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354460994816
 GameObject:
   m_ObjectHideFlags: 0
@@ -15809,6 +15968,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Roger, a stoic figure born in the frozen wilderness of Frostborne,
+    wields the chilling power of ice. With a heart as cold as the arctic winds, he
+    dedicated his life to the study of cryomancy. Roger embarks on a solitary journey,
+    using his icy abilities to forge a path through the frozen tundras and protect
+    the realm from encroaching darkness. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354550371358
 GameObject:
   m_ObjectHideFlags: 0
@@ -15981,6 +16146,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Buld, hailing from the frozen realm of Frostholm, is a master
+    of ice manipulation. Born with an icy touch, they honed their skills in cryomancy,
+    harnessing the power of frost and blizzards. Buld roams the wintry landscapes,
+    using their frozen might to preserve the delicate balance of nature and bring
+    a chill to those who threaten the realm. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354554360086
 GameObject:
   m_ObjectHideFlags: 0
@@ -16077,6 +16248,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Friz, a mischievous spirit from the land of Frostfall, is
+    imbued with the essence of ice. With a playful nature and a heart as cold as
+    the winter''s breath, Friz frolics through snow-covered forests and frozen lakes.
+    Using their cryomancy, they create dazzling ice sculptures and bring a frosty
+    delight to all who encounter their icy presence. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &2432360354586990818
 GameObject:
   m_ObjectHideFlags: 0
@@ -17815,7 +17992,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'I am the embodiment of nature''s dark side. My poisons bring agony and
+    decay to all who oppose me!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17842,8 +18022,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18443,6 +18623,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Artorias, a unique soul born with the rare gift of wielding
+    both fire and ice, hails from the harmonious realm of Equinox. As the chosen
+    guardian of balance, they possess the ability to command the opposing elements
+    with equal mastery. Artorias embarks on a perilous journey to protect the delicate
+    equilibrium between fire and ice, harnessing their dual powers to extinguish
+    chaos and ignite harmony wherever they go. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &5613359580622771209
 GameObject:
   m_ObjectHideFlags: 0
@@ -19206,6 +19393,11 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Burns, a formidable pyromancer, has always been drawn to
+    the flames. Through intense training, he has mastered the art of fire manipulation.
+    Now, he roams the lands, leaving a trail of blazing destruction in his wake,
+    seeking to bring both warmth and chaos wherever he goes. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &5871317603005643547
 GameObject:
   m_ObjectHideFlags: 0
@@ -19721,6 +19913,144 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6099712927454906303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6276815442421028133}
+  - component: {fileID: 7976954955103078162}
+  - component: {fileID: 1365856042783263123}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6276815442421028133
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099712927454906303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6111286716601982177}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7976954955103078162
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099712927454906303}
+  m_CullTransparentMesh: 1
+--- !u!114 &1365856042783263123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099712927454906303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Alec, un puissant mage de glace, fut autrefois un villageois ordinaire.
+    Suite \xE0 une rencontre mystique, il d\xE9couvrit ses pouvoirs gel\xE9s. Maintenant,
+    il parcourt le monde pour prot\xE9ger les innocents et restaurer l'\xE9quilibre
+    entre les \xE9l\xE9ments."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: -164.26929, y: -336.2148, z: -159.05457, w: -342.2186}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &6104956951539915842
 GameObject:
   m_ObjectHideFlags: 0
@@ -19969,6 +20299,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Rash, a tempest of fire from the treacherous realm of Infernia,
+    is consumed by the flames within. Born with an innate connection to fire, they
+    journey through the realms, leaving trails of scorched earth in their wake. With
+    their fiery fury, Rash seeks to burn away the injustice and tyranny that plagues
+    the world, forging a path of retribution and cleansing. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956951552249399
 GameObject:
   m_ObjectHideFlags: 0
@@ -20791,6 +21127,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: "El\xE9a, a radiant soul from the Ember Peaks, possesses
+    an unparalleled affinity for fire. Born in a village blessed by eternal flames,
+    she learned to command the primal power of pyromancy. Guided by an inner fire,
+    El\xE9a embarks on a quest to protect her homeland, channeling the fiery essence
+    within her to illuminate the path of her destiny. "
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956951771333861
 GameObject:
   m_ObjectHideFlags: 0
@@ -22981,6 +23323,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Primo, a flame-born warrior from the scorching kingdom of
+    Pyrodon, embodies the power of fire. Trained in the ancient art of pyromancy,
+    Primo wields their fiery might with precision and control. With a heart ablaze
+    with determination, they set forth on a quest to vanquish darkness, using their
+    flames to illuminate the path of righteousness. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956952577266100
 GameObject:
   m_ObjectHideFlags: 0
@@ -23077,6 +23425,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Renal, a child of Emberfall, possesses an unyielding connection
+    to fire. Growing up amidst the eternal flames, they honed their skills in pyromancy.
+    Driven by a burning desire to protect, Renal embarked on a journey, using their
+    fiery powers to defend the vulnerable and bring light to the darkest corners
+    of the realm. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956952600594771
 GameObject:
   m_ObjectHideFlags: 0
@@ -23477,6 +23831,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Spade, an enigmatic figure from the scorching deserts of
+    Ignis Sands, embodies the essence of fire. A master of pyromancy, they harness
+    the intense heat and destructive power of flames. With a burning desire for justice,
+    Spade roams the realms, using their fiery abilities to vanquish evil and protect
+    the innocent from the encroaching shadows. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956952681263055
 GameObject:
   m_ObjectHideFlags: 0
@@ -23953,6 +24313,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Sana, a radiant soul from the Ember Isles, wields the power
+    of fire. Guided by an inner flame, they embraced the path of pyromancy. With
+    unwavering determination, Sana embarked on a quest to restore balance in a world
+    consumed by darkness, channeling their fiery essence to ignite hope and inspire
+    others to rise from the ashes. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956952821294013
 GameObject:
   m_ObjectHideFlags: 0
@@ -24488,6 +24854,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Lionel, hailing from the blazing kingdom of Flamoria, embodies
+    the essence of fire. From a young age, they trained diligently in the art of
+    pyromancy, honing their skills to perfection. Now, Lionel travels the realms,
+    using their fiery powers to protect the innocent and uphold justice, a beacon
+    of strength and passion in a world of flames. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956953045218714
 GameObject:
   m_ObjectHideFlags: 0
@@ -25158,6 +25530,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Fyru, born in Emberfall, possesses an innate affinity for
+    fire. Guided by curiosity, they embarked on a journey to master the art of pyromancy.
+    Along the way, they encountered Burns, a seasoned fire mage, and together they
+    faced trials, unlocking their true potential. Their paths converged in Pyralis,
+    where they sealed a dormant Fire Guardian, becoming celebrated heroes. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956953272199868
 GameObject:
   m_ObjectHideFlags: 0
@@ -25254,6 +25632,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Almia, a fiery spirit from the kingdom of Emberholme, is
+    ablaze with the power of fire. From a young age, they embraced the ancient art
+    of pyromancy, learning to wield flames with grace and precision. Now, Almia embarks
+    on a quest to restore their homeland''s lost glory, using their fiery might to
+    ignite the spirits of their people and spark a revolution. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956953283337927
 GameObject:
   m_ObjectHideFlags: 0
@@ -25426,6 +25810,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Elaina, born in the volcanic heartland of Pyralis, possesses
+    an innate connection to fire. Raised amidst molten landscapes, she trained rigorously
+    in the art of pyromancy. Now, Elaina travels the realms, using her fiery powers
+    to protect the weak and bring warmth to those in need, a beacon of hope amidst
+    the chilling winds of adversity. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6104956953312810448
 GameObject:
   m_ObjectHideFlags: 0
@@ -27461,6 +27851,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Maui, a free-spirited adventurer from the vibrant realm
+    of Thundera, is charged with the power of electricity. Growing up amidst thunderstorms
+    and lightning dances, they harnessed the electric currents to enhance their agility
+    and strength. With their electrifying abilities, Maui journeys through the realms,
+    seeking thrilling adventures and using their powers to spark excitement and ignite
+    the spirits of those they encounter. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102183344337765
 GameObject:
   m_ObjectHideFlags: 0
@@ -27785,6 +28182,11 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Born in Whisperwood, Jack embraced the power of poison.
+    He wields its deadly might as a guardian, protecting the delicate balance of
+    nature. With every step, he ensures that poison remains a force for preservation
+    and equilibrium in the world. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102183402769400
 GameObject:
   m_ObjectHideFlags: 0
@@ -28185,6 +28587,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Keyneth, hailing from the mysterious land of Serpentia,
+    embraced the path of poison. Gifted with an affinity for toxins, he ventured
+    forth to unravel the secrets of venomous creatures. Now, he roams as a guardian,
+    using his mastery over poisons to protect the natural world from those who would
+    exploit it. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102183509786362
 GameObject:
   m_ObjectHideFlags: 0
@@ -28357,6 +28765,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Lodres, a determined traveler from the realm of Voltaris,
+    is charged with the power of electricity. Born with an innate connection to lightning,
+    they embarked on a quest to understand the mysteries of their electrifying abilities.
+    Lodres traverses the realms, using their electric powers to protect the innocent
+    and restore balance. With each crackling bolt, they forge a path of enlightenment
+    and illuminate the way for those in need. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102183630372408
 GameObject:
   m_ObjectHideFlags: 0
@@ -29407,6 +29822,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: Jetchi, an intrepid explorer, possesses a profound connection
+    with the power of electricity. Charged with an unwavering spirit, he harnesses
+    the raw energy of lightning. Guided by his electrifying abilities, he embarks
+    on daring quests, traversing treacherous terrains and illuminating the path for
+    those in darkness.
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102183995537231
 GameObject:
   m_ObjectHideFlags: 0
@@ -31200,6 +31621,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Misa, a curious soul from the luminous city of Elektra,
+    is blessed with the power of electricity. Inspired by the mesmerizing glow of
+    neon lights, they pursued the study of electrokinetics. Misa''s electric abilities
+    allow them to manipulate and control currents, illuminating the world around
+    them. With a heart ablaze with curiosity, they embark on a journey to unlock
+    the secrets of their electrifying powers and bring enlightenment to the realms. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102184393226662
 GameObject:
   m_ObjectHideFlags: 0
@@ -31583,6 +32011,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Charon, a mysterious figure from the technologically advanced
+    city of Electropolis, commands the power of electricity. With a mind as electric
+    as the currents they manipulate, Charon harnesses their abilities to bring light
+    and innovation to their city. As a guardian of Electropolis, they defend against
+    those who seek to disrupt the delicate balance of power, ensuring a bright future
+    for their people. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102184421154357
 GameObject:
   m_ObjectHideFlags: 0
@@ -33072,6 +33507,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Diaval, a mysterious figure hailing from the realm of Thundercliff,
+    is imbued with the power of electricity. Born during a tumultuous thunderstorm,
+    they developed a deep connection to the electric currents that course through
+    the world. Diaval harnesses their electrifying abilities to bring balance and
+    restoration wherever they go, channeling the power of storms to protect the innocent
+    and ward off darkness that threatens the realms. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102184919838612
 GameObject:
   m_ObjectHideFlags: 0
@@ -33168,6 +33610,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Jaden, a spirited youth from the bustling city of Electrolyn,
+    possesses a natural affinity for electricity. Growing up surrounded by technological
+    marvels, they developed a keen interest in the power of electric currents. Jaden
+    embarks on a journey to master their electric abilities, using their knowledge
+    to power inventions that improve the lives of their community. With a spark of
+    creativity, Jaden illuminates the world with their electric prowess. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102184976336670
 GameObject:
   m_ObjectHideFlags: 0
@@ -33948,6 +34397,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Creed, a charismatic wanderer from the realm of Thunderfell,
+    possesses an electrifying connection to the power of electricity. Gifted with
+    the ability to channel lightning, they embark on a journey to uncover the secrets
+    of their lineage. With a magnetic personality and a lightning-fast wit, Creed
+    uses their electric powers to illuminate the path of truth and guide others towards
+    a brighter future. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102185158192345
 GameObject:
   m_ObjectHideFlags: 0
@@ -34196,6 +34652,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Rhus, an enigmatic soul from the realm of Voltaris, is charged
+    with the power of electricity. Born amidst the crackling thunderstorms, they
+    possess an innate affinity for manipulating electric currents. With their electrifying
+    abilities, Rhus ventures through the realms, seeking to unlock the ancient mysteries
+    hidden within the surge of energy, and to bring enlightenment to a world enveloped
+    in darkness. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6882102185235796079
 GameObject:
   m_ObjectHideFlags: 0
@@ -34866,6 +35329,13 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Obeiron, a brilliant inventor from the city of Electrum,
+    possesses an unrivaled mastery of electricity. Born with a natural affinity for
+    the electric currents, they dedicated their life to advancing technological marvels.
+    Obeiron''s inventions revolutionize the way people harness electricity, bringing
+    light and power to their city. With their brilliant mind and electric expertise,
+    they strive to create a brighter and more sustainable future for all. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &6903753862845075771
 GameObject:
   m_ObjectHideFlags: 0
@@ -37525,6 +37995,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Baldur, an enigmatic figure born in the shadowed realm of
+    Venomspire, is entwined with the power of poison. From a young age, they embraced
+    the deadly arts, mastering the manipulation of toxins. Now, Baldur roams the
+    land, veiled in secrecy, using their lethal expertise to dispense justice and
+    safeguard the delicate equilibrium of the realms. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473329047477324
 GameObject:
   m_ObjectHideFlags: 0
@@ -37849,6 +38325,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Lia, a product of the secretive Poison Ivy clan, was destined
+    for greatness in the world of poisons. From a young age, she mastered the art
+    of toxicology, learning to manipulate deadly substances with finesse. Now, Lia
+    roams the land, using her poisonous expertise to safeguard her clan and maintain
+    the delicate equilibrium of nature. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473329074685702
 GameObject:
   m_ObjectHideFlags: 0
@@ -38310,6 +38792,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Viper, a mysterious figure from the shadows, emerged with
+    a profound connection to poison. Born in the venomous realm of Serpentia, Viper
+    honed their skills in the art of toxins. Now, they traverse the land, using their
+    deadly mastery to dispense justice and protect the innocent from the dark forces
+    that threaten their world. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473329204450565
 GameObject:
   m_ObjectHideFlags: 0
@@ -39149,6 +39637,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Praesithe, an enigmatic figure from the depths of the Forbidden
+    Marshes, embodies the essence of poison. Shrouded in mystery, they possess an
+    uncanny ability to harness the deadliest toxins. Praesithe''s journey unfolds
+    as they navigate treacherous landscapes, using their poisonous gifts to safeguard
+    ancient secrets and preserve the delicate balance of the realms. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473329707013496
 GameObject:
   m_ObjectHideFlags: 0
@@ -39456,6 +39950,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Belladonna, a mysterious enchantress, draws power from the
+    deadliest of plants. She has mastered the art of poison manipulation, weaving
+    her toxins into deadly concoctions. With an air of allure and danger, she wanders
+    through the shadows, using her deadly abilities to protect nature and exact vengeance
+    upon those who harm it. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473329818733200
 GameObject:
   m_ObjectHideFlags: 0
@@ -40793,6 +41293,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Korog, hailing from the ancient swamps of Bogmire, possesses
+    an innate bond with poison. As a child, they navigated treacherous marshes, studying
+    the venomous flora and fauna that thrived within. Now, Korog wanders, harnessing
+    the power of toxins to defend their homeland and preserve the delicate balance
+    of nature. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473330150698642
 GameObject:
   m_ObjectHideFlags: 0
@@ -41632,6 +42138,12 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Arum, a wanderer from the toxic marshlands of Venomscale,
+    possesses an affinity for poison. Their childhood was shaped by the venomous
+    creatures and perilous plants that surrounded them. Now, Arum roams the realms,
+    using their deep knowledge of toxins to unravel mysteries and protect the fragile
+    balance of the natural world. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473330640517362
 GameObject:
   m_ObjectHideFlags: 0
@@ -42547,6 +43059,11 @@ MonoBehaviour:
   characterImage: {fileID: 0}
   characterName: {fileID: 0}
   currentMage: {fileID: 11400000, guid: 1a7298ca7364ed84eb25da3b6c282d30, type: 2}
+  characterDescription: 'Gerard, a prodigy in the realm of poisons, honed his skills
+    to perfection. With a dark past, he now roams as a guardian of balance, using
+    his mastery over toxins to heal and protect, a symbol of redemption through the
+    venomous arts. '
+  characterDescriptionText: {fileID: 0}
 --- !u!1 &8263473331046917227
 GameObject:
   m_ObjectHideFlags: 0

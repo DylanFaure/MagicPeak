@@ -33,6 +33,7 @@ public class PNJAppearance : MonoBehaviour
     public List<string> PnjDialogue;
     public bool randomRotation;
     public bool isInteracting;
+    public bool isDialogueRandom;
     public Direction startingDirection;
     
 
