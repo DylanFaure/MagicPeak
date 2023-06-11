@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatStopsMovement;
     public LayerMask ice;
     public Animator animator;
+    public bool isTalkingToPnj = false;
 
     // -----------------------------------------------------------------------------------------
     // private members
@@ -66,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isCastingSpell)
+        if (!isCastingSpell && !isTalkingToPnj)
         {
             PlayerOrientation();
             MovePlayer();
