@@ -54,6 +54,21 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerPrefs.SetString("Right", "D");
         }
+
+        if (!PlayerPrefs.HasKey("Spell1"))
+        {
+            PlayerPrefs.SetString("Spell1", "Alpha1");
+        }
+
+        if (!PlayerPrefs.HasKey("Spell2"))
+        {
+            PlayerPrefs.SetString("Spell2", "Alpha2");
+        }
+
+        if (!PlayerPrefs.HasKey("Spell3"))
+        {
+            PlayerPrefs.SetString("Spell3", "Alpha3");
+        }
     }
 
     // -----------------------------------------------------------------------------------------
@@ -231,25 +246,19 @@ public class PlayerMovement : MonoBehaviour
         if (isSliding)
             return;
 
-        // // TEMPORAIRE -- TESTS
-        // if (Input.GetKeyDown(KeyCode.E))
-        // {
-        //     animator.SetBool("spellCast1", true);
-        //     isCastingSpell = true;
-        //     StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
-        // }
-        // else if (Input.GetKeyDown(KeyCode.R))
-        // {
-        //     animator.SetBool("spellCast2", true);
-        //     isCastingSpell = true;
-        //     StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
-        // }
-        // else if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     animator.SetBool("death", true);
-        //     isCastingSpell = true;
-        //     StartCoroutine(SetAnimationWithTime("death", 4f));
-        // }
+        if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell1"))))
+        {
+            animator.SetBool("spellCast1", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
+        }
+        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell2")))
+        || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell3"))))
+        {
+            animator.SetBool("spellCast2", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
+        }
     }
 
     IEnumerator SetAnimationWithTime(string spellName, float spellTime)

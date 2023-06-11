@@ -55,6 +55,21 @@ public class CharacterAbilityHandler : MonoBehaviour
             abilities.Add(new AbilityContainer(currentMage.abilities[i]));
         }
         currentMage.isNew = false;
+
+        if (!PlayerPrefs.HasKey("Spell1"))
+        {
+            PlayerPrefs.SetString("Spell1", "Alpha1");
+        }
+
+        if (!PlayerPrefs.HasKey("Spell2"))
+        {
+            PlayerPrefs.SetString("Spell2", "Alpha2");
+        }
+
+        if (!PlayerPrefs.HasKey("Spell3"))
+        {
+            PlayerPrefs.SetString("Spell3", "Alpha3");
+        }
     }
 
     private void Update()
@@ -62,13 +77,15 @@ public class CharacterAbilityHandler : MonoBehaviour
         CheckCurrentMage();
         ProcessCooldowns();
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell1"))))
         {
             ActivateAbility(abilities[0]);
-        } else if (Input.GetKeyDown(KeyCode.E) && currentMage.characterRarity >= 4)
+        } else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell2")))
+        && currentMage.characterRarity >= 4)
         {
             ActivateAbility(abilities[1]);
-        } else if (Input.GetKeyDown(KeyCode.R) && currentMage.characterRarity >= 5)
+        } else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell3")))
+        && currentMage.characterRarity >= 5)
         {
             ActivateAbility(abilities[2]);
         }
