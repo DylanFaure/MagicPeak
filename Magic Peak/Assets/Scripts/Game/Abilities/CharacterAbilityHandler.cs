@@ -50,6 +50,11 @@ public class CharacterAbilityHandler : MonoBehaviour
 
     private void Awake()
     {
+        if (currentMage.characterName == "Placeholder")
+        {
+            LoadLastMage();
+        }
+
         for (int i = 0; i < currentMage.abilities.Count; i++)
         {
             abilities.Add(new AbilityContainer(currentMage.abilities[i]));
@@ -88,6 +93,14 @@ public class CharacterAbilityHandler : MonoBehaviour
         && currentMage.characterRarity >= 5)
         {
             ActivateAbility(abilities[2]);
+        }
+    }
+
+    private void LoadLastMage()
+    {
+        if (PlayerPrefs.HasKey("CharacterSelected"))
+        {
+            currentMage.ChangeCharacter(PlayerPrefs.GetString("CharacterSelected"));
         }
     }
 
