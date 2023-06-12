@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    private bool isPaused = false;
 
     void Start()
     {
@@ -20,32 +21,23 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        bool isPaused = Time.timeScale == 0;
-        pauseMenu.SetActive(!isPaused);
-        Time.timeScale = isPaused ? 1 : 0;
+        isPaused = !isPaused;
+        pauseMenu.SetActive(isPaused);
+        Time.timeScale = isPaused ? 0f : 1f;
     }
 
     public void Resume()
     {
-        print("Resume");
         TogglePauseMenu();
-    }
-
-    public void Restart()
-    {
-        print("Restart");
-        SceneManager.LoadScene("Game");
     }
 
     public void MainMenu()
     {
-        print("Start");
         SceneManager.LoadScene("Start");
     }
 
     public void Quit()
     {
-        print("Quit");
        Application.Quit();
     }
 }
