@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 {
     // static public members
     public static PlayerMovement instance;
+    [SerializeField] private PeakMage currentMage;
 
     // -----------------------------------------------------------------------------------------
     // public members
@@ -216,8 +217,13 @@ public class PlayerMovement : MonoBehaviour
             isCastingSpell = true;
             StartCoroutine(SetAnimationWithTime("spellCast1", 0.517f));
         }
-        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell2")))
-        || Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell3"))))
+        else if (Input.GetKey((KeyCode)System.Enum.Parse( typeof(KeyCode), PlayerPrefs.GetString("Spell2"))) && currentMage.characterRarity >= 4)
+        {
+            animator.SetBool("spellCast2", true);
+            isCastingSpell = true;
+            StartCoroutine(SetAnimationWithTime("spellCast2", 0.433f));
+        }
+        else if (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Spell3"))) && currentMage.characterRarity >= 5)
         {
             animator.SetBool("spellCast2", true);
             isCastingSpell = true;
