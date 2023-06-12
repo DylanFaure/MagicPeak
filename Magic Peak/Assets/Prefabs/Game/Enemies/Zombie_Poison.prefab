@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4053651956245149678}
   - component: {fileID: 4053651956245149668}
   - component: {fileID: 457432808232737298}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Zombie_Poison
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4053651957826588264}
   - component: {fileID: 4053651957826588267}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Hitbox
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
@@ -318,15 +318,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9152312932816457226, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933066539465, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933088698259, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286537, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Name
@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286537, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286539, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933496754360, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933496754363, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_AnchorMax.x

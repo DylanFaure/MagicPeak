@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4840471092698127149}
   - component: {fileID: 4840471092698127150}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Hitbox
   m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4840471094337774251}
   - component: {fileID: 4840471094337774241}
   - component: {fileID: 5553889832869289506}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Minautor_Poison
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -163,6 +163,8 @@ MonoBehaviour:
   attackDamage: 15
   attackTimer: 2
   visionRange: 3
+  xpGiven: 30
+  moneyGiven: 30
   healthBar: {fileID: 4840471092605504366}
   playerStats: {fileID: 0}
 --- !u!195 &5553889832869289506
@@ -316,15 +318,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9152312932816457226, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933066539465, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933088698259, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286537, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Name
@@ -332,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286537, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933449286539, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -424,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933496754360, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9152312933496754363, guid: d57864882ef0a6a4db505b4abe101f09, type: 3}
       propertyPath: m_AnchorMax.x
