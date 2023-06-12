@@ -33,42 +33,6 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         instance = this;
-
-        if (!PlayerPrefs.HasKey("Top"))
-        {
-            PlayerPrefs.SetString("Top", "Z");
-            PlayerPrefs.Save();
-        }
-
-        if (!PlayerPrefs.HasKey("Bottom"))
-        {
-            PlayerPrefs.SetString("Bottom", "S");
-        }
-
-        if (!PlayerPrefs.HasKey("Left"))
-        {
-            PlayerPrefs.SetString("Left", "Q");
-        }
-
-        if (!PlayerPrefs.HasKey("Right"))
-        {
-            PlayerPrefs.SetString("Right", "D");
-        }
-
-        if (!PlayerPrefs.HasKey("Spell1"))
-        {
-            PlayerPrefs.SetString("Spell1", "Alpha1");
-        }
-
-        if (!PlayerPrefs.HasKey("Spell2"))
-        {
-            PlayerPrefs.SetString("Spell2", "Alpha2");
-        }
-
-        if (!PlayerPrefs.HasKey("Spell3"))
-        {
-            PlayerPrefs.SetString("Spell3", "Alpha3");
-        }
     }
 
     // -----------------------------------------------------------------------------------------

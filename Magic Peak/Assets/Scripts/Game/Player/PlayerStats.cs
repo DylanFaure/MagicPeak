@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("currentHealth") == false || PlayerPrefs.HasKey("maxHealth") == false || PlayerPrefs.HasKey("level") == false || PlayerPrefs.HasKey("experience") == false || PlayerPrefs.HasKey("experienceNeeded") == false || PlayerPrefs.GetFloat("experienceNeeded") == 0 || PlayerPrefs.GetFloat("experienceNeeded") > PlayerPrefs.GetFloat("experience") || PlayerPrefs.HasKey("attackDamage") == false)
+        if (PlayerPrefs.HasKey("currentHealth") == false || PlayerPrefs.HasKey("maxHealth") == false || PlayerPrefs.HasKey("level") == false || PlayerPrefs.HasKey("experience") == false || PlayerPrefs.HasKey("experienceNeeded") == false || PlayerPrefs.GetFloat("experienceNeeded") == 0 || PlayerPrefs.HasKey("attackDamage") == false)
         {
             ResetToBaseStatPlayer();
         }
