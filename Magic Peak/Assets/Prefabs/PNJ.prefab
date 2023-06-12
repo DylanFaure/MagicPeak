@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3004260406094405095}
   - component: {fileID: 3004260406094405093}
   - component: {fileID: -352175747228728626}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: PNJ
   m_TagString: PNJ
   m_Icon: {fileID: 0}
@@ -180,3 +180,6 @@ MonoBehaviour:
     of the room
   - You can also call another guild member with the cabinet in the upper left
   randomRotation: 1
+  isInteracting: 0
+  isDialogueRandom: 0
+  startingDirection: 0
