@@ -15,6 +15,8 @@ public class Teleportation : MonoBehaviour
         {
             changingScene = true;
             SceneManager.sceneLoaded += OnSceneLoaded;
+            PlayerPrefs.SetString("CurrentScene", nextSceneName);
+            PlayerPrefs.Save();
             SceneManager.LoadScene(nextSceneName);
         }
     }

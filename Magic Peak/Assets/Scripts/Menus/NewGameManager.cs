@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NewGameManager : MonoBehaviour
 {
+    public Button resumeButton;
+
     private string[] characterPrefs = {
         "Alec", "Almia", "Arianna", "Aries", "Arsenic", "Artorias", "Arum", "Baldur", "Belladonna",
         "Buld", "Burns", "Camage", "Chap", "Charon", "Creed", "Diaval", "Elaina", "Elea", "Friz",
@@ -93,6 +96,15 @@ public class NewGameManager : MonoBehaviour
             PlayerPrefs.SetString("Spell3", "Alpha3");
         }
         PlayerPrefs.Save(); // Enregistrer les modifications des PlayerPrefs
+
+        if (!PlayerPrefs.HasKey("CurrentScene"))
+        {
+            resumeButton.interactable = false;
+        }
+        else
+        {
+            resumeButton.interactable = true;
+        }
     }
 
     public void ResetCharacters()
@@ -120,6 +132,7 @@ public class NewGameManager : MonoBehaviour
         PlayerPrefs.SetFloat("experience", 0);
         PlayerPrefs.SetFloat("experienceNeeded", 100);
         PlayerPrefs.SetFloat("attackDamage", 1f);
+        PlayerPrefs.Save();
     }
 
     public void ResetAll()
@@ -127,5 +140,7 @@ public class NewGameManager : MonoBehaviour
         ResetCharacters();
         ResetWallet();
         ResetPlayerStats();
+        PlayerPrefs.SetString("CurrentScene", "Entrance");
+        PlayerPrefs.Save();
     }
 }

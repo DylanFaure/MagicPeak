@@ -9,4 +9,16 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void ChangeSceneToCurrentScene()
+    {
+        if (PlayerPrefs.HasKey("CurrentScene"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetString("CurrentScene"));
+        }
+        else
+        {
+            SceneManager.LoadScene("Entrance");
+        }
+    }
 }
