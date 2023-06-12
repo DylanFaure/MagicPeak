@@ -20,10 +20,16 @@ public class WalletManager : MonoBehaviour
             Debug.Log("Wallet instanced !");
         }
     }
+    public void WinCurrency()
+    {
+        walletData.currencyAmount += walletData.winningCurrencyAmount;
+        walletData.winningCurrencyAmount = 0;
+        SaveWalletData();
+    }
 
     public void AddCurrency(int amount)
     {
-        walletData.currencyAmount += amount;
+        walletData.winningCurrencyAmount += amount;
         SaveWalletData();
     }
 
@@ -44,6 +50,11 @@ public class WalletManager : MonoBehaviour
     public int GetWalletData()
     {
         return walletData.currencyAmount;
+    }
+
+    public int GetWinningWalletData()
+    {
+        return walletData.winningCurrencyAmount;
     }
 
     private void SaveWalletData()

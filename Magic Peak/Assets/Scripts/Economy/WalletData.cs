@@ -7,4 +7,5 @@ using UnityEngine;
 public class WalletData
 {
     public int currencyAmount;
+    public int winningCurrencyAmount;
 }

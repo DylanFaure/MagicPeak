@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI winningMoneyText;
 
     private bool updateStatsEnemy = false;
     private bool isDead = false;
@@ -186,6 +187,7 @@ public class PlayerStats : MonoBehaviour
     private void DisplayMoney()
     {
         moneyText.text = "$" + walletManager.GetWalletData().ToString();
+        winningMoneyText.text = "(+$" + walletManager.GetWinningWalletData().ToString() + ")";
     }
 
     private void DisplayLevel()

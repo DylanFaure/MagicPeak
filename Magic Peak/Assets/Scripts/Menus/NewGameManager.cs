@@ -51,7 +51,7 @@ public class NewGameManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("attackDamage"))
         {
-            PlayerPrefs.SetFloat("attackDamage", 15f);
+            PlayerPrefs.SetFloat("attackDamage", 1f);
         }
 
         foreach (string character in characterPrefs)
@@ -119,7 +119,7 @@ public class NewGameManager : MonoBehaviour
         PlayerPrefs.SetFloat("level", 1);
         PlayerPrefs.SetFloat("experience", 0);
         PlayerPrefs.SetFloat("experienceNeeded", 100);
-        PlayerPrefs.SetFloat("attackDamage", 15f);
+        PlayerPrefs.SetFloat("attackDamage", 1f);
     }
 
     public void ResetAll()
