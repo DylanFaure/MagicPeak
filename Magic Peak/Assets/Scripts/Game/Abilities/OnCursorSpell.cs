@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OnCursorSpell : MonoBehaviour
@@ -11,7 +9,6 @@ public class OnCursorSpell : MonoBehaviour
     [HideInInspector] public float chargeTime;
     [HideInInspector] public Vector3 target;
     [HideInInspector] public float castOffset;
-
     [HideInInspector] public float activeTime;
     private float timer;
     private bool isCharging = false;

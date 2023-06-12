@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Fire Eruption
   cooldownTime: 6
-  activeTime: 1.05
+  activeTime: 1.1
   damage: 50
   range: 8
   speed: 0
   shield: 0
   heal: 0
   chargeTime: 0.6
+  castOffset: 0
+  rotationOffset: 0
   abilityClass: 1
   prefab: {fileID: 6648211185439405731, guid: 5a6b9f5aef6fb504da5bc6e3b096416e, type: 3}
