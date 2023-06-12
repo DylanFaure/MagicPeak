@@ -117,12 +117,13 @@ GameObject:
   - component: {fileID: 6648211185439405730}
   - component: {fileID: 6648211185439405728}
   - component: {fileID: 6648211185439405729}
+  - component: {fileID: 3060381140700744126}
   - component: {fileID: 8031558718835890578}
   - component: {fileID: 6418010391801266319}
   - component: {fileID: 2163736588958832158}
   m_Layer: 7
   m_Name: FireEruption
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,6 +217,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &3060381140700744126
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648211185439405731}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &8031558718835890578
 CircleCollider2D:
   m_ObjectHideFlags: 0

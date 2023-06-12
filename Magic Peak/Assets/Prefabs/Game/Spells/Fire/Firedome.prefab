@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5676685028779978915}
   - component: {fileID: 5676685028779978913}
   - component: {fileID: 5676685028779978912}
+  - component: {fileID: -219847892148078950}
   - component: {fileID: 7457425189803511875}
-  - component: {fileID: -4100485291860586905}
   - component: {fileID: -8802243627352000964}
+  - component: {fileID: -4100485291860586905}
   m_Layer: 7
   m_Name: Firedome
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &-219847892148078950
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676685028779978914}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &7457425189803511875
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126,24 +148,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5154058
---- !u!114 &-4100485291860586905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5676685028779978914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df96be9ce1b8cfe408c8210186f6ab48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  range: 0
-  chargeTime: 0
-  target: {x: 0, y: 0, z: 0}
-  castOffset: 0
-  activeTime: 0
 --- !u!82 &-8802243627352000964
 AudioSource:
   m_ObjectHideFlags: 0
@@ -240,6 +244,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4100485291860586905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676685028779978914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df96be9ce1b8cfe408c8210186f6ab48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  range: 0
+  chargeTime: 0
+  target: {x: 0, y: 0, z: 0}
+  castOffset: 0
+  activeTime: 0
 --- !u!1 &5676685030531761912
 GameObject:
   m_ObjectHideFlags: 0

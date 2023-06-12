@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1844076436104656072}
   - component: {fileID: 1844076436104656118}
   - component: {fileID: 1844076436104656119}
-  - component: {fileID: 2936907470894702584}
   - component: {fileID: 901603811307230782}
+  - component: {fileID: 2936907470894702584}
   - component: {fileID: 2821410778569822212}
   m_Layer: 7
   m_Name: PoisonBall
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +109,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &901603811307230782
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844076436104656073}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &2936907470894702584
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -125,27 +146,6 @@ CircleCollider2D:
   m_Offset: {x: -0.013639033, y: -0.26823527}
   serializedVersion: 2
   m_Radius: 0.34688944
---- !u!50 &901603811307230782
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844076436104656073}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &2821410778569822212
 MonoBehaviour:
   m_ObjectHideFlags: 0

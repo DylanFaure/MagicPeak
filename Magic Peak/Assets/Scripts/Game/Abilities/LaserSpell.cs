@@ -44,14 +44,6 @@ public class LaserSpell : MonoBehaviour
         transform.position += direction.normalized * range / 2f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<EnemyAI>().TakeDamage(damage);
-        }
-    }
-
     private void EnableCollider()
     {
         col.enabled = true;

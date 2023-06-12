@@ -60,9 +60,24 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Spell"))
         {
-            TakeDamage(playerStats.GetAttackPlayer());
+            if (collision.TryGetComponent<ProjectileSpell>(out ProjectileSpell projectileSpell))
+            {
+                TakeDamage(projectileSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer());
+                Debug.Log("Enemy took " + projectileSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer() + " damage from " + projectileSpell.name);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.TryGetComponent<OnCursorSpell>(out OnCursorSpell aoeSpell))
+            {
+                TakeDamage(aoeSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer());
+                Debug.Log("Enemy took " + aoeSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer() + " damage from " + aoeSpell.name);
+            }
+            else if (collision.TryGetComponent<LaserSpell>(out LaserSpell onPlayerSpell))
+            {
+                TakeDamage(onPlayerSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer());
+                Debug.Log("Enemy took " + onPlayerSpell.damage * player.GetComponent<PlayerStats>().GetAttackPlayer() + " damage from " + onPlayerSpell.name);
+            }
         }
     }
 

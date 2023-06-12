@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5555596264103684156}
   - component: {fileID: 5555596264103684146}
   - component: {fileID: 5555596264103684147}
+  - component: {fileID: -5623217120808576307}
   - component: {fileID: 6458683884943170015}
   - component: {fileID: 3670270157888596623}
   - component: {fileID: 5941423244174315447}
   m_Layer: 7
   m_Name: PoisonVenom
-  m_TagString: Untagged
+  m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +111,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &-5623217120808576307
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555596264103684157}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!70 &6458683884943170015
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

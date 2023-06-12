@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Firedome
   cooldownTime: 6
-  activeTime: 0.96
+  activeTime: 0.94
   damage: 50
   range: 8
   speed: 0
   shield: 0
   heal: 0
   chargeTime: 0.25
+  castOffset: 0
+  rotationOffset: 0
   abilityClass: 1
   prefab: {fileID: 5676685028779978914, guid: fb62f093412e8664a81cbd903471b2d6, type: 3}

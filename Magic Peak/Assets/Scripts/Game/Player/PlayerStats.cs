@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float currentHealth = 100;
 
     [Header("Stats")]
-    [SerializeField] private float attackDamage = 15f;
+    [SerializeField] private float attackDamage = 1f;
     [SerializeField] private float level = 1;
     [SerializeField] private float experience = 0;
     [SerializeField] private float experienceNeeded = 100;
@@ -39,6 +39,14 @@ public class PlayerStats : MonoBehaviour
         else
         {
             GetSavedUserStat();
+            if (PlayerPrefs.HasKey("VitorSpecialSauce") == false)
+            {
+                attackDamage = 1f + ((level - 1) * 0.1f);
+                PlayerPrefs.SetFloat("attackDamage", attackDamage);
+                PlayerPrefs.SetInt("VitorSpecialSauce", 1);
+                PlayerPrefs.Save();
+                // This is to put everybodies attack damage to the correct value
+            }
         }
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
@@ -100,7 +108,7 @@ public class PlayerStats : MonoBehaviour
     {
         maxHealth = 100;
         currentHealth = 100;
-        attackDamage = 15f;
+        attackDamage = 1f;
         level = 1;
         experience = 0;
         experienceNeeded = 100;
@@ -124,7 +132,7 @@ public class PlayerStats : MonoBehaviour
             HealPlayer(maxHealth);
             xpBar.SetXp(0);
             xpBar.SetMaxXp(experienceNeeded);
-            attackDamage += 5;
+            attackDamage += 0.1f;
         }
         else
         {
