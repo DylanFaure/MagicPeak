@@ -21,6 +21,8 @@ public class PlayerInteraction : MonoBehaviour
     // private members
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private List<string> pnjDialogueList;
+    [SerializeField] private string characterDescription;
+    [SerializeField] private TextMeshProUGUI characterDescriptionText;
     private bool isInteracting;
     private int dialogueIndex;
     private bool isDialogueRandomize;

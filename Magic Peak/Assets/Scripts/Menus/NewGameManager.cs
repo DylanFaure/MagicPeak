@@ -29,9 +29,20 @@ public class NewGameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void ResetPlayerStats()
+    {
+        PlayerPrefs.SetFloat("currentHealth", 100);
+        PlayerPrefs.SetFloat("maxHealth", 100);
+        PlayerPrefs.SetFloat("level", 1);
+        PlayerPrefs.SetFloat("experience", 0);
+        PlayerPrefs.SetFloat("experienceNeeded", 100);
+        PlayerPrefs.SetFloat("attackDamage", 15f);
+    }
+
     public void ResetAll()
     {
         ResetCharacters();
         ResetWallet();
+        ResetPlayerStats();
     }
 }
