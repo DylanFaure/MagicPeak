@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class NewGameManager : MonoBehaviour
 {
     public Button resumeButton;
+    private WalletData walletData;
 
     private string[] characterPrefs = {
         "Alec", "Almia", "Arianna", "Aries", "Arsenic", "Artorias", "Arum", "Baldur", "Belladonna",
@@ -19,7 +20,11 @@ public class NewGameManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("walletData"))
         {
-            PlayerPrefs.SetInt("walletData", 0);
+            walletData = new WalletData();
+            walletData.currencyAmount = 50;
+            walletData.winningCurrencyAmount = 0;
+            string json = JsonUtility.ToJson(walletData);
+            PlayerPrefs.SetString("walletData", json);
         }
 
         if (!PlayerPrefs.HasKey("CharacterSelected"))
@@ -120,7 +125,11 @@ public class NewGameManager : MonoBehaviour
 
     public void ResetWallet()
     {
-        PlayerPrefs.SetInt("walletData", 0);
+        walletData = new WalletData();
+        walletData.currencyAmount = 50;
+        walletData.winningCurrencyAmount = 0;
+        string json = JsonUtility.ToJson(walletData);
+        PlayerPrefs.SetString("walletData", json);
         PlayerPrefs.Save();
     }
 
