@@ -64,7 +64,8 @@ public class NewGameManager : MonoBehaviour
 
         foreach (string character in characterPrefs)
         {
-            PlayerPrefs.SetInt(character, 0); // Définir la valeur de la PlayerPref à 0 (non débloqué)
+            if (!PlayerPrefs.HasKey(character))
+                PlayerPrefs.SetInt(character, 0); // Définir la valeur de la PlayerPref à 0 (non débloqué)
         }
 
         if (!PlayerPrefs.HasKey("Roger"))
