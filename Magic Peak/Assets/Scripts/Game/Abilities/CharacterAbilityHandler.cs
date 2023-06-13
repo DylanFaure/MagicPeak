@@ -50,7 +50,7 @@ public class CharacterAbilityHandler : MonoBehaviour
 
     private void Awake()
     {
-        if (currentMage.characterName == "Placeholder")
+        if (currentMage.characterName == "Placeholder" || currentMage.characterName != PlayerPrefs.GetString("CharacterSelected"))
         {
             LoadLastMage();
         }
