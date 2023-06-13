@@ -115,7 +115,7 @@ public class GachaManager : MonoBehaviour {
                 PlayerPrefs.SetInt(itemWon.nameCard, 1);
                 PlayerPrefs.Save();
 
-                Debug.Log("New character unlocked !");
+                errorText.text = "New character unlocked !";
             }
             DisableButton();
             DisappearBalanceText();
