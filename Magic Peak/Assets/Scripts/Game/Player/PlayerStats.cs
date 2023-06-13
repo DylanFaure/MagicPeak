@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
 
     private bool updateStatsEnemy = false;
     private bool isDead = false;
+    private WalletData walletData;
 
     void Start()
     {
@@ -117,6 +118,18 @@ public class PlayerStats : MonoBehaviour
 
     private void ResetStatsPlayer()
     {
+        string json = PlayerPrefs.GetString("walletData");
+        walletData = JsonUtility.FromJson<WalletData>(json);
+        walletData.winningCurrencyAmount = 0;
+        json = JsonUtility.ToJson(walletData);
+        PlayerPrefs.SetString("walletData", json);
+        PlayerPrefs.SetFloat("currentHealth", 100);
+        PlayerPrefs.SetFloat("maxHealth", 100);
+        PlayerPrefs.SetFloat("level", 1);
+        PlayerPrefs.SetFloat("experience", 0);
+        PlayerPrefs.SetFloat("experienceNeeded", 100);
+        PlayerPrefs.SetFloat("attackDamage", 1f);
+        PlayerPrefs.Save();
         currentHealth = maxHealth;
         SaveUserStat();
     }
