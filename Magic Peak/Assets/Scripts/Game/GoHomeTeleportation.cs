@@ -23,6 +23,12 @@ public class GoHomeTeleportation : MonoBehaviour
             changingScene = true;
             SceneManager.sceneLoaded += OnSceneLoaded;
             PlayerPrefs.SetString("CurrentScene", nextSceneName);
+            PlayerPrefs.SetFloat("currentHealth", 100);
+            PlayerPrefs.SetFloat("maxHealth", 100);
+            PlayerPrefs.SetFloat("level", 1);
+            PlayerPrefs.SetFloat("experience", 0);
+            PlayerPrefs.SetFloat("experienceNeeded", 100);
+            PlayerPrefs.SetFloat("attackDamage", 1f);
             PlayerPrefs.Save();
             SceneManager.LoadScene(nextSceneName);
         }
