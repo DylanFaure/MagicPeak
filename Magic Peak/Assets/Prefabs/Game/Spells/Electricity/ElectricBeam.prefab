@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7440122802944077992}
   - component: {fileID: 7440122802944077990}
   - component: {fileID: 7440122802944077991}
-  - component: {fileID: 9074448298348947501}
-  - component: {fileID: 5315457079027701034}
   - component: {fileID: -5499986145329863501}
+  - component: {fileID: 5315457079027701034}
+  - component: {fileID: 9074448298348947501}
   - component: {fileID: 2109241691499332530}
   m_Layer: 7
   m_Name: ElectricBeam
@@ -110,23 +110,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9074448298348947501
-MonoBehaviour:
+--- !u!50 &-5499986145329863501
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7440122802944077993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba6404e3ad964c245bae66f7f80fc414, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  chargeTime: 0
-  activeTime: 0
-  range: 0
-  direction: {x: 0, y: 0, z: 0}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &5315457079027701034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,27 +157,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.71875, y: 1.4375}
   m_EdgeRadius: 0
---- !u!50 &-5499986145329863501
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &9074448298348947501
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7440122802944077993}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6404e3ad964c245bae66f7f80fc414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  chargeTime: 0
+  activeTime: 0
+  range: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!82 &2109241691499332530
 AudioSource:
   m_ObjectHideFlags: 0
